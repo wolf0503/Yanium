@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 88%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 88%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 88%;
+    --primary: 43 65% 52%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 88%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.08;
+    --ring: 43 65% 52%;
+    --radius: 0.5rem;
+  }
+  * { border-color: rgba(255,255,255,0.08); }
+  *, *::before, *::after { cursor: none !important; }
+  body { background-color: #050505; color: #E0E0E0; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
+
+/* Noise texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.25); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,175,55,0.5); }
+
+/* Selection */
+::selection { background: rgba(212,175,55,0.22); color: #E0E0E0; }
+
+/* Glass — enhanced */
+.glass {
+  background: rgba(12,12,12,0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* Gold pulse glow */
+@keyframes pulse-glow-gold {
+  0%, 100% { box-shadow: 0 0 12px rgba(212,175,55,0.25), 0 0 28px rgba(212,175,55,0.08); }
+  50%       { box-shadow: 0 0 22px rgba(212,175,55,0.45), 0 0 50px rgba(212,175,55,0.18); }
+}
+.pulse-glow { animation: pulse-glow-gold 3s ease-in-out infinite; }
+
+/* ── Black Hole Animations ─────────────────────────── */
+
+/* Orbiting star ring containers */
+@keyframes bhOrbitCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes bhOrbitCCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+/* Star twinkle */
+@keyframes bhTwinkle {
+  0%, 100% { opacity: 1;    transform: translate(-50%,-50%) scale(1); }
+  50%       { opacity: 0.35; transform: translate(-50%,-50%) scale(0.6); }
+}
+
+/* 3-D disk spin */
+@keyframes bhDisk {
+  from { transform: rotateX(73deg) rotateZ(0deg); }
+  to   { transform: rotateX(73deg) rotateZ(360deg); }
+}
+@keyframes bhDiskRev {
+  from { transform: rotateX(73deg) rotateZ(0deg); }
+  to   { transform: rotateX(73deg) rotateZ(-360deg); }
+}
+
+/* Gravitational lensing halo breathe */
+@keyframes bhLens {
+  0%, 100% { transform: scale(1);    opacity: 0.7; }
+  50%       { transform: scale(1.05); opacity: 1; }
+}
+
+/* Relativistic jet pulse */
+@keyframes bhJet {
+  0%, 100% { opacity: 0.4; transform: scaleX(1); }
+  40%       { opacity: 0.75; transform: scaleX(1.2); }
+}
+
+/* Photon ring flicker */
+@keyframes bhPhoton {
+  0%,100% { opacity: 0.92; box-shadow: 0 0 20px 4px rgba(255,230,70,0.7),
+                             0 0 50px 10px rgba(212,175,55,0.35),
+                             0 0 95px 18px rgba(180,120,10,0.15); }
+  25%     { opacity: 1;    box-shadow: 0 0 30px 6px rgba(255,248,120,0.95),
+                             0 0 70px 15px rgba(212,175,55,0.5),
+                             0 0 125px 28px rgba(200,140,20,0.22); }
+  55%     { opacity: 0.80; box-shadow: 0 0 15px 3px rgba(255,200,40,0.55),
+                             0 0 38px 8px rgba(212,175,55,0.25),
+                             0 0 75px 14px rgba(160,100,10,0.1); }
+  80%     { opacity: 0.97; box-shadow: 0 0 26px 5px rgba(255,240,90,0.82),
+                             0 0 60px 12px rgba(212,175,55,0.42),
+                             0 0 105px 22px rgba(190,130,15,0.18); }
+}
+
+/* Einstein arc rotation */
+@keyframes bhEinstein {
+  0%,100% { opacity: 0.65; transform: rotateZ(-12deg) scale(1); }
+  50%       { opacity: 0.85; transform: rotateZ(-12deg) scale(1.03); }
+}
+
+/* Accretion disk rotation */
+@keyframes diskSpin {
+  from { transform: rotateX(73deg) rotateZ(0deg); }
+  to   { transform: rotateX(73deg) rotateZ(360deg); }
+}
+@keyframes diskSpinSlow {
+  from { transform: rotateX(73deg) rotateZ(0deg); }
+  to   { transform: rotateX(73deg) rotateZ(-360deg); }
+}
+
+/* Photon ring flicker — mimics quantum emission */
+@keyframes photonFlicker {
+  0%,100% { opacity: 0.92; box-shadow: 0 0 22px 4px rgba(255,230,70,0.7),
+                             0 0 55px 10px rgba(212,175,55,0.35),
+                             0 0 100px 20px rgba(180,120,10,0.15); }
+  25%     { opacity: 1;    box-shadow: 0 0 32px 6px rgba(255,248,120,0.95),
+                             0 0 75px 15px rgba(212,175,55,0.5),
+                             0 0 130px 30px rgba(200,140,20,0.22); }
+  55%     { opacity: 0.82; box-shadow: 0 0 16px 3px rgba(255,200,40,0.55),
+                             0 0 40px 8px rgba(212,175,55,0.25),
+                             0 0 80px 15px rgba(160,100,10,0.1); }
+  80%     { opacity: 0.97; box-shadow: 0 0 28px 5px rgba(255,240,90,0.82),
+                             0 0 65px 12px rgba(212,175,55,0.42),
+                             0 0 110px 24px rgba(190,130,15,0.18); }
+}
+
+/* Relativistic jet pulse */
+@keyframes jetPulse {
+  0%,100% { opacity: 0.35; transform: scaleX(1); }
+  40%     { opacity: 0.65; transform: scaleX(1.15); }
+}
+
+/* Lensing halo breathe */
+@keyframes lensingBreathe {
+  0%,100% { transform: scale(1);    opacity: 0.6; }
+  50%     { transform: scale(1.04); opacity: 0.9; }
+}
+
+/* Photon ring pulse */
+@keyframes photonPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.025); }
+}
+
+/* Gold shimmer text */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.text-shimmer {
+  background: linear-gradient(90deg, #D4AF37 0%, #F5E06E 40%, #D4AF37 60%, #F5E06E 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Terminal cursor */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.terminal-cursor { animation: blink-cursor 1s step-end infinite; }
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* Status dot pulse */
+@keyframes status-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0.5; }
+}
+.status-pulse { animation: status-pulse 2s ease-in-out infinite; }
+
+/* Scanline sweep */
+@keyframes scanline {
+  0%   { top: -2px; opacity: 0.07; }
+  100% { top: 100%; opacity: 0; }
+}
+.scanline {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent);
+  pointer-events: none;
+  animation: scanline 5s linear infinite;
+}
+
+/* Nebula ambient blobs */
+@keyframes nebula-drift {
+  0%, 100% { transform: translate(0, 0) scale(1);   opacity: 0.018; }
+  33%       { transform: translate(25px, -18px) scale(1.08); opacity: 0.03; }
+  66%       { transform: translate(-18px, 12px) scale(0.94); opacity: 0.012; }
+}
+.nebula { animation: nebula-drift 22s ease-in-out infinite; }
+
+/* Card entry — scale + fade */
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* GPU hints for animated elements */
+.will-gpu {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}

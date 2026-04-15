@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash \"C:/Users/User/.claude/plugins/cache/superpowers-marketplace/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh\" --project-dir \"C:/projects/Yanium\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/tailwindcss/package.json''\\).version\\)\")",
+      "Bash(npx kill-port:*)",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(python -c ':*)",
+      "Bash(python -c \"import sys,json; logs=json.loads\\(sys.stdin.read\\(\\)\\); errors=[l for l in logs if 'error' in l.get\\('type',''\\).lower\\(\\)]; print\\(json.dumps\\(errors[:5], indent=2\\)\\)\")"
+    ]
+  }
+}

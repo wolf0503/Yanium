@@ -1,0 +1,189 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,600&family=Tenor+Sans&display=swap');
+
+  .preview-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .color-card {
+    border-radius: 8px;
+    padding: 28px 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .color-card:hover { transform: translateY(-2px); }
+
+  .color-card.gold-card {
+    background: #080808;
+    border-color: rgba(212,175,55,0.4);
+  }
+  .color-card.cyan-card {
+    background: #080808;
+    border-color: rgba(0,240,255,0.4);
+  }
+  .color-card.hybrid-card {
+    background: #080808;
+    border-color: rgba(212,175,55,0.3);
+  }
+
+  .swatch { width: 40px; height: 4px; border-radius: 2px; margin-bottom: 16px; }
+  .swatch-gold { background: linear-gradient(90deg, #D4AF37, #F5E06E); }
+  .swatch-cyan { background: linear-gradient(90deg, #00F0FF, #00C8D4); }
+  .swatch-hybrid { background: linear-gradient(90deg, #D4AF37 50%, #00F0FF 50%); }
+
+  .card-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    letter-spacing: 0.25em;
+    margin-bottom: 6px;
+  }
+  .card-gold .card-brand { color: #D4AF37; }
+  .card-cyan .card-brand { color: #00F0FF; }
+  .card-hybrid .card-brand { color: #D4AF37; }
+
+  .card-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+    opacity: 0.6;
+    color: #c0c0c0;
+  }
+
+  .card-element {
+    display: inline-block;
+    border: 1px solid currentColor;
+    padding: 6px 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+  }
+  .card-gold .card-element { color: #D4AF37; border-color: rgba(212,175,55,0.5); }
+  .card-cyan .card-element { color: #00F0FF; border-color: rgba(0,240,255,0.5); }
+  .card-hybrid .card-element { color: #D4AF37; border-color: rgba(212,175,55,0.5); }
+
+  .card-body-text {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 11px;
+    color: rgba(224,224,224,0.5);
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  .card-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 14px;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    border: 1px solid;
+  }
+  .card-gold .card-btn { color: #D4AF37; border-color: rgba(212,175,55,0.5); background: rgba(212,175,55,0.08); }
+  .card-cyan .card-btn { color: #00F0FF; border-color: rgba(0,240,255,0.5); background: rgba(0,240,255,0.08); }
+  .card-hybrid .card-btn { color: #00F0FF; border-color: rgba(0,240,255,0.5); background: rgba(0,240,255,0.08); }
+
+  .hybrid-note {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 10px;
+    color: rgba(224,224,224,0.4);
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .neural-dot {
+    position: absolute;
+    top: 12px; right: 14px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+  }
+  .dot-gold { background: #D4AF37; box-shadow: 0 0 8px #D4AF37; }
+  .dot-cyan { background: #00F0FF; box-shadow: 0 0 8px #00F0FF; }
+  .dot-hybrid { background: #D4AF37; box-shadow: 0 0 8px #D4AF37; }
+
+  .vibe-label {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    margin-bottom: 4px;
+    opacity: 0.45;
+    color: #e0e0e0;
+  }
+
+  .grid-line {
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
+</style>
+
+<h2>Which accent color direction feels right for Yanium?</h2>
+<p class="subtitle">Your brand is "Rolls Royce meets AI" — the accent color sets the entire personality</p>
+
+<div class="preview-bar">
+
+  <!-- OPTION A: Gold -->
+  <div class="color-card gold-card card-gold option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="grid-line"></div>
+    <div class="neural-dot dot-gold"></div>
+    <div class="letter">A</div>
+    <div class="content">
+      <div class="swatch swatch-gold"></div>
+      <div class="vibe-label">// LUXURY GOLD</div>
+      <div class="card-brand">YANIUM</div>
+      <div class="card-tagline">Velocity of Intelligence</div>
+      <div class="card-element">Yn · 71 · 288.07</div>
+      <div class="card-body-text">Gold obsidian aesthetic. Rolls Royce tier. Every element glows amber — premium, aristocratic, timeless.</div>
+      <div class="card-btn">INITIATE PROTOCOL</div>
+      <div class="hybrid-note">#D4AF37 · Dark Gold · Warm</div>
+    </div>
+  </div>
+
+  <!-- OPTION B: Keep Cyan -->
+  <div class="color-card cyan-card card-cyan option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="grid-line"></div>
+    <div class="neural-dot dot-cyan"></div>
+    <div class="letter">B</div>
+    <div class="content">
+      <div class="swatch swatch-cyan"></div>
+      <div class="vibe-label">// ELECTRIC CYAN</div>
+      <div class="card-brand">YANIUM</div>
+      <div class="card-tagline">Velocity of Intelligence</div>
+      <div class="card-element">Yn · 71 · 288.07</div>
+      <div class="card-body-text">Keep the current electric cyan. AI-native, sci-fi energy. Cold, sharp, neural — the existing site's signature.</div>
+      <div class="card-btn">INITIATE PROTOCOL</div>
+      <div class="hybrid-note">#00F0FF · Neon Cyan · Cool</div>
+    </div>
+  </div>
+
+  <!-- OPTION C: Gold + Cyan Hybrid -->
+  <div class="color-card hybrid-card card-hybrid option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="grid-line"></div>
+    <div class="neural-dot dot-hybrid"></div>
+    <div class="letter">C</div>
+    <div class="content">
+      <div class="swatch swatch-hybrid"></div>
+      <div class="vibe-label">// GOLD × CYAN HYBRID</div>
+      <div class="card-brand">YANIUM</div>
+      <div class="card-tagline">Velocity of Intelligence</div>
+      <div class="card-element">Yn · 71 · 288.07</div>
+      <div class="card-body-text">Gold for brand/logo/headings — luxury signal. Cyan for AI/tech elements — neural energy. Best of both worlds.</div>
+      <div class="card-btn">INITIATE PROTOCOL</div>
+      <div class="hybrid-note">Gold primary · Cyan secondary</div>
+    </div>
+  </div>
+
+</div>

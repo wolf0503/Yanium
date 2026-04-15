@@ -1,0 +1,306 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,600&family=Tenor+Sans&display=swap');
+
+  body { background: #030303; }
+
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 720px;
+    margin: 0 auto 24px;
+  }
+
+  .section-row {
+    display: grid;
+    grid-template-columns: 36px 1fr 200px;
+    gap: 16px;
+    align-items: stretch;
+    position: relative;
+  }
+
+  .section-row + .section-row::before {
+    content: '';
+    position: absolute;
+    left: 17px; top: -16px;
+    width: 1px; height: 16px;
+    background: rgba(212,175,55,0.2);
+  }
+
+  .step-num {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 14px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    color: rgba(212,175,55,0.35);
+    letter-spacing: 0.1em;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #D4AF37;
+    box-shadow: 0 0 8px rgba(212,175,55,0.6);
+    flex-shrink: 0;
+  }
+  .step-dot.cyan { background: #00F0FF; box-shadow: 0 0 8px rgba(0,240,255,0.6); }
+  .step-dot.dim  { background: rgba(212,175,55,0.3); box-shadow: none; }
+
+  .section-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+  }
+  .section-card:hover { border-color: rgba(212,175,55,0.25); }
+  .section-card.hero-card { border-color: rgba(212,175,55,0.3); background: rgba(212,175,55,0.03); }
+  .section-card.changed { border-left: 2px solid rgba(0,240,255,0.5); }
+  .section-card.removed { border-left: 2px solid rgba(255,80,80,0.4); opacity: 0.7; }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: #D4AF37;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .badge {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
+  .badge.keep  { background: rgba(212,175,55,0.12); color: rgba(212,175,55,0.7); border: 1px solid rgba(212,175,55,0.2); }
+  .badge.new   { background: rgba(0,240,255,0.12);  color: rgba(0,240,255,0.8);  border: 1px solid rgba(0,240,255,0.25); }
+  .badge.upgrade { background: rgba(120,255,120,0.1); color: rgba(120,255,120,0.7); border: 1px solid rgba(120,255,120,0.2); }
+  .badge.drop  { background: rgba(255,80,80,0.1);   color: rgba(255,100,100,0.6); border: 1px solid rgba(255,80,80,0.15); }
+
+  .card-desc {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 11px;
+    color: rgba(224,224,224,0.45);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  .interactions {
+    margin-bottom: 12px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .int-title {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: rgba(0,240,255,0.5);
+    margin-bottom: 8px;
+  }
+
+  .int-item {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 10px;
+    color: rgba(224,224,224,0.35);
+    letter-spacing: 0.03em;
+    line-height: 1.9;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .int-item::before {
+    content: '→';
+    color: rgba(212,175,55,0.4);
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+
+  .divider-label {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.15);
+    text-align: center;
+    padding: 4px 0 12px;
+  }
+
+  h2 { font-family: 'Cinzel', serif; color: #D4AF37; letter-spacing: 0.15em; font-weight: 400; font-size: 16px; margin-bottom: 4px; }
+  .subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(224,224,224,0.4); font-size: 13px; margin-bottom: 20px; }
+</style>
+
+<h2>PROPOSED SITE ARCHITECTURE</h2>
+<p class="subtitle">Restructured to convert enterprise clients on first impression</p>
+
+<div class="flow">
+
+  <!-- 01 HERO -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot"></div>01</div>
+    <div>
+      <div class="section-card hero-card">
+        <div class="card-title">HERO — BLACK HOLE <span class="badge keep">KEEP + UPGRADE</span></div>
+        <div class="card-desc">The animated black hole with gold accretion disk, cyan jets, Yn element box, and the new headline. First 3 seconds must justify the entire visit.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">Mouse parallax on star field — stars shift with cursor</div>
+        <div class="int-item">Cursor proximity pulses the accretion disk faster</div>
+        <div class="int-item">Yn element box subtle float animation</div>
+        <div class="int-item">Scroll-triggered hero fade as user leaves section</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- 02 SIGNAL (replaces Terminal) -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot cyan"></div>02</div>
+    <div>
+      <div class="section-card changed">
+        <div class="card-title">SIGNAL — LIVE METRICS <span class="badge new">REPLACES TERMINAL</span></div>
+        <div class="card-desc">Animated KPI counters: delivery speed, project count, client stats. Enterprise clients need proof, not a terminal window. Numbers count up on scroll-enter.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">Numbers animate from 0 on scroll enter (odometer effect)</div>
+        <div class="int-item">Horizontal scrolling ticker of tech stack / clients</div>
+        <div class="int-item">Subtle gold scan-line sweeping across the section</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- 03 PHILOSOPHY (renames Vibe Story) -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot"></div>03</div>
+    <div>
+      <div class="section-card changed">
+        <div class="card-title">PHILOSOPHY — THE YANIUM WAY <span class="badge upgrade">RENAMED + ELEVATED</span></div>
+        <div class="card-desc">"Code is a commodity. Logic is the leverage." Four pillars — same content but with dramatic staggered reveals and gold accent lines. Premium copywriting tone.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">Staggered word-by-word text reveal on scroll</div>
+        <div class="int-item">Pillar cards with magnetic hover — follow cursor slightly</div>
+        <div class="int-item">Icon borders light up on hover with gold glow</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- 04 SERVICES (replaces Capabilities) -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot cyan"></div>04</div>
+    <div>
+      <div class="section-card changed">
+        <div class="card-title">SERVICES — WHAT WE BUILD <span class="badge upgrade">RENAMED + EXPANDED</span></div>
+        <div class="card-desc">Bento grid: Web Ecosystems, Mobile, AI Agents, UI/UX, Rapid Prototyping. Each card has a mini animated visual (not just an icon). Hover reveals depth.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">3D tilt effect on card hover (perspective transform)</div>
+        <div class="int-item">Each card has a unique mini animation on hover</div>
+        <div class="int-item">Gradient border that sweeps around card on hover</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- 05 COMPARISON -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot"></div>05</div>
+    <div>
+      <div class="section-card">
+        <div class="card-title">THE STANDARD — LEGACY vs YANIUM <span class="badge keep">KEEP + UPGRADE</span></div>
+        <div class="card-desc">Same comparison table but rows animate in one by one. The "Yanium" column glows gold. Each row has a micro-animation on the checkmark/X.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">Rows stagger in from left/right on scroll</div>
+        <div class="int-item">Yanium column has permanent gold left-border glow</div>
+        <div class="int-item">Row hover highlights the full row with subtle gold wash</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- 06 VENTURES (replaces Labs) -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot cyan"></div>06</div>
+    <div>
+      <div class="section-card changed">
+        <div class="card-title">VENTURES — THE PORTFOLIO <span class="badge upgrade">LABS → VENTURES</span></div>
+        <div class="card-desc">SkillInjected, ROI Sentinel, Myzra. "Labs" sounds scrappy — "Ventures" sounds investment-grade. Cards show live status indicators, metrics, and animated progress bars.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">Status dot pulses (live green / amber / dim)</div>
+        <div class="int-item">Metrics bar animates to fill on scroll enter</div>
+        <div class="int-item">Card hover reveals a subtle background pattern unique to each venture</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- 07 MANIFESTO -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot"></div>07</div>
+    <div>
+      <div class="section-card">
+        <div class="card-title">MANIFESTO — WE DELIVER OUTCOMES <span class="badge keep">KEEP + ELEVATE</span></div>
+        <div class="card-desc">The 3 pillars. The headline "We do not bill hours. We deliver outcomes." is the strongest copy on the site — give it cinematic treatment. Full-width, dramatic typography.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">Headline splits: "OUTCOMES" types itself in gold on enter</div>
+        <div class="int-item">Pillar number counter sweeps up (00 → 01, 02, 03)</div>
+        <div class="int-item">Pillar card border traces itself on scroll reveal</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- 08 GATE (Contact) -->
+  <div class="section-row">
+    <div class="step-num"><div class="step-dot cyan"></div>08</div>
+    <div>
+      <div class="section-card hero-card">
+        <div class="card-title">THE GATE — BY INVITATION ONLY <span class="badge keep">KEEP + UPGRADE</span></div>
+        <div class="card-desc">The contact form. "We accept a limited number of high-stakes projects." Upgrade: form fields animate open, submit triggers a dramatic gold particle burst, not just a timeout.</div>
+      </div>
+      <div class="interactions">
+        <div class="int-title">// INTERACTIONS</div>
+        <div class="int-item">Form fields slide in sequentially as user scrolls in</div>
+        <div class="int-item">Input focus triggers a gold border glow animation</div>
+        <div class="int-item">Submit: particle burst + "PROTOCOL INITIATED" reveal</div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+</div>
+
+<div class="divider-label">── GLOBAL INTERACTIONS ──</div>
+
+<div class="interactions" style="max-width:720px;margin:0 auto 8px;">
+  <div class="int-title">// SITE-WIDE EFFECTS</div>
+  <div class="int-item">Custom cursor — small gold dot that leaves a cyan trail</div>
+  <div class="int-item">Section transitions — horizontal scan-line wipe between sections</div>
+  <div class="int-item">Smooth scroll with lerp (buttery, not snap)</div>
+  <div class="int-item">Noise texture overlay (already exists — keep)</div>
+  <div class="int-item">Navbar — Yn logo pulses subtly, nav links get gold underline on hover</div>
+  <div class="int-item">Page load — neural loader followed by hero fade-in (already exists)</div>
+</div>
