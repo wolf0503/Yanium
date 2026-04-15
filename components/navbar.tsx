@@ -4,13 +4,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "SIGNAL",     href: "#terminal" },
-  { label: "PHILOSOPHY", href: "#philosophy" },
-  { label: "SERVICES",   href: "#services" },
-  { label: "STANDARD",   href: "#comparison" },
-  { label: "VENTURES",   href: "#ventures" },
-  { label: "MANIFESTO",  href: "#manifesto" },
-  { label: "THE GATE",   href: "#contact" },
+  { label: "WHAT WE ARE", href: "#philosophy" },
+  { label: "SERVICES",    href: "#services" },
+  { label: "HOW WE WORK", href: "#how-we-work" },
+  { label: "VENTURES",    href: "#ventures" },
+  { label: "TEAM",        href: "#team" },
+  { label: "WORK WITH US",href: "#contact" },
 ]
 
 function YnLogo() {
@@ -68,6 +67,10 @@ export function Navbar() {
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
+            <a href="#contact"
+              className="ml-2 border border-gold/50 bg-gold/[0.07] px-5 py-2 font-display text-[10px] tracking-[0.25em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.18]">
+              BOOK A CALL
+            </a>
           </div>
           <button type="button" onClick={() => setMobileOpen(!mobileOpen)}
             className="text-silver/80 transition-colors hover:text-gold md:hidden" aria-label="Toggle menu">
@@ -94,6 +97,13 @@ export function Navbar() {
                 {link.label}
               </motion.a>
             ))}
+            <motion.a href="#contact"
+              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navLinks.length * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              onClick={() => setMobileOpen(false)}
+              className="border border-gold/50 bg-gold/[0.07] px-8 py-3 font-display text-sm tracking-[0.3em] text-gold transition-colors hover:bg-gold/[0.18]">
+              BOOK A CALL
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
