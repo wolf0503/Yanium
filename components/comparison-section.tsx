@@ -4,12 +4,15 @@ import { useRef } from "react"
 import { X, Check } from "lucide-react"
 
 const comparisonRows = [
-  { category: "DEVELOPMENT SPEED",  legacy: "Months per milestone",           frontier: "Days to production" },
-  { category: "PRICING MODEL",      legacy: "Hourly billing / time-based",    frontier: "Result-based / outcome-driven" },
-  { category: "WORKFLOW",           legacy: "Manual coding, slow iteration",   frontier: "AI-native, vibe coding hybrid" },
-  { category: "TEAM STRUCTURE",     legacy: "Large teams, slow coordination",  frontier: "Lean operators + AI engines" },
-  { category: "TECHNOLOGY",         legacy: "Outdated stacks, legacy debt",    frontier: "Cutting-edge, AI-augmented" },
-  { category: "SCALABILITY",        legacy: "Rebuild to scale",                frontier: "Architected for scale from day one" },
+  { category: "COVERAGE",         legacy: "One discipline per agency",           frontier: "Full-stack: web, mobile, AI, DevOps, QA, design, brand" },
+  { category: "SPEED",            legacy: "Months per milestone",                frontier: "Days to production" },
+  { category: "PRICING",          legacy: "Hourly billing, unpredictable costs",  frontier: "Result-based, outcome-driven" },
+  { category: "AI CAPABILITY",    legacy: "Bolted on or outsourced",              frontier: "Core to every build" },
+  { category: "WORKFLOW",         legacy: "Manual coding, slow iteration",        frontier: "Vibe Engineering — Human-AI hybrid" },
+  { category: "TEAM STRUCTURE",   legacy: "Large teams, slow coordination",       frontier: "Lean specialists + AI engines" },
+  { category: "AFTER LAUNCH",     legacy: "Handoff and disappear",                frontier: "Ongoing partnership available" },
+  { category: "SCALABILITY",      legacy: "Rebuild to scale",                     frontier: "Architected for scale from day one" },
+  { category: "ENGAGEMENT TYPES", legacy: "Agency or freelancer",                 frontier: "Both — plus long-term partnership" },
 ]
 
 function ComparisonRow({ row, index }: { row: typeof comparisonRows[0]; index: number }) {
@@ -53,24 +56,27 @@ export function ComparisonSection() {
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1 }}
             className="mb-4 inline-block font-display text-[10px] text-gold/70">
-            // THE STANDARD
+            // LEGACY vs Yn
           </motion.span>
           <h2 className="font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">
             <motion.span
               initial={{ opacity: 0, x: -20 }} animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block text-silver/40">LEGACY
+              className="inline-block text-silver/40">THE OLD GUARD
             </motion.span>
-            <motion.span initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              className="mx-3 inline-block">VS.
-            </motion.span>
+            <br />
             <motion.span
               initial={{ opacity: 0, x: 20 }} animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block text-shimmer">YANIUM
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="inline-block text-shimmer">IS OBSOLETE.
             </motion.span>
           </h2>
+          <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mx-auto mt-4 max-w-md font-serif text-sm italic text-silver/50">
+            Element 71 was the last rare earth to be isolated.
+            Everyone thought the series was complete. It wasn&apos;t.
+          </motion.p>
         </motion.div>
 
         <motion.div
@@ -101,7 +107,7 @@ export function ComparisonSection() {
         <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-10 text-center font-mono text-[10px] tracking-[0.25em] text-silver/30">
-          THE OLD GUARD IS OBSOLETE. THE FRONTIER IS HERE.
+          ONE ELEMENT. EVERY COMPOUND YOU NEED.
         </motion.p>
       </div>
     </section>
