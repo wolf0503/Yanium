@@ -5,7 +5,10 @@ import { HeroSection } from "@/components/hero-section"
 import { TerminalSection } from "@/components/terminal-section"
 import { PhilosophySection } from "@/components/philosophy-section"
 import { ServicesSection } from "@/components/services-section"
+import { HowWeWorkSection } from "@/components/how-we-work-section"
 import { ComparisonSection } from "@/components/comparison-section"
+import { WhoWeWorkWithSection } from "@/components/who-we-work-with-section"
+import { TeamSection } from "@/components/team-section"
 import { VenturesSection } from "@/components/ventures-section"
 import { ManifestoSection } from "@/components/manifesto-section"
 import { FooterSection } from "@/components/footer-section"
@@ -24,7 +27,6 @@ export default function Page() {
       <main
         className="relative min-h-screen overflow-x-hidden bg-obsidian"
         style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.6s ease" }}>
-        {/* Global animated space + neural background */}
         <SpaceBackground />
         <CursorGlow />
         <div className="relative z-10">
@@ -37,7 +39,13 @@ export default function Page() {
           <SectionDivider />
           <ServicesSection />
           <SectionDivider />
+          <HowWeWorkSection />
+          <SectionDivider />
           <ComparisonSection />
+          <SectionDivider />
+          <WhoWeWorkWithSection />
+          <SectionDivider />
+          <TeamSection />
           <SectionDivider />
           <VenturesSection />
           <SectionDivider />
