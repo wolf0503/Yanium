@@ -6,28 +6,28 @@ import { Shield, TrendingUp, Activity } from "lucide-react"
 const ventures = [
   {
     icon: Shield,
-    code: "CV_SENTINEL",
+    code: "Yn-V01 · CV SENTINEL",
     title: "CV Sentinel",
-    desc: "AI Career Tracking & ROI Analytics.",
-    status: "ACTIVE",
+    desc: "CV Sentinel analyzes career trajectories, tracks job market signals, and delivers actionable intelligence to help professionals make smarter, faster moves. Built for people who treat their career like an asset.",
+    status: "ACTIVE · Yn-175",
     statusColor: "green" as const,
-    stat: { label: "Profiles Analyzed", value: "12K+", sub: "and growing" },
+    stat: { label: "Profiles Analyzed", value: "12,000+", sub: "and growing" },
   },
   {
     icon: TrendingUp,
-    code: "ROI_SENTINEL",
+    code: "Yn-V02 · ROI SENTINEL",
     title: "ROI Sentinel",
-    desc: "Predictive Real-Estate Intelligence for the Armenian Market.",
-    status: "BETA",
+    desc: "ROI Sentinel indexes property data, forecasts market movements, and surfaces high-ROI opportunities before they become obvious to everyone else. Data-driven. Local-first. Built for serious investors.",
+    status: "BETA · Yn-175",
     statusColor: "gold" as const,
-    stat: { label: "Data Points", value: "3.2M", sub: "indexed" },
+    stat: { label: "Data Points Indexed", value: "3.2M+", sub: "indexed" },
   },
   {
     icon: Activity,
-    code: "MYZRA",
+    code: "Yn-V03 · MYZRA",
     title: "Myzra",
-    desc: "Champion-Logic Health & Performance Protocol.",
-    status: "R&D",
+    desc: "Myzra applies the training principles of elite athletes to personal performance — structured, data-driven, and built for people who operate at high intensity and refuse to leave performance on the table.",
+    status: "R&D · Yn-176",
     statusColor: "silver" as const,
     stat: { label: "Neural Map", value: "v2.0", sub: "in development" },
   },
@@ -113,7 +113,7 @@ export function VenturesSection() {
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1 }}
             className="mb-4 inline-block font-display text-[10px] text-gold/70">
-            // INTERNAL PROJECTS
+            // INTERNAL COMPOUNDS · BUILT BY Yn
           </motion.span>
           <h2 className="mb-4 font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">
             THE <span className="text-gold">VENTURES</span>
@@ -122,7 +122,8 @@ export function VenturesSection() {
             initial={{ opacity: 0, y: 10 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mx-auto max-w-xl font-serif text-base italic leading-relaxed text-silver/65">
-            We don&apos;t just build for others. We build the future of our own portfolio.
+            Our ventures are proof of method. Built with the same workflow, standards, and speed
+            we bring to every client engagement. No external funding required. No excuses accepted.
           </motion.p>
         </motion.div>
 
