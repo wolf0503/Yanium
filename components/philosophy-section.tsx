@@ -1,14 +1,14 @@
 "use client"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
-import { Code2, Cpu, Workflow, Zap } from "lucide-react"
 import { MagneticCard } from "@/components/magnetic-card"
 
 const pillars = [
-  { icon: Code2,    label: "HUMAN INTENT",    desc: "We define the business logic, the strategy, and the architecture." },
-  { icon: Cpu,      label: "AI EXECUTION",    desc: "Our AI engines handle infrastructure, boilerplate, and scaling." },
-  { icon: Workflow, label: "HYBRID WORKFLOW", desc: "The fusion of human creativity and machine precision." },
-  { icon: Zap,      label: "10x VELOCITY",    desc: "Ship production-grade systems in days, not quarters." },
+  { number: "71", label: "ATOMIC NUMBER", sub: "The missing element" },
+  { number: "175", label: "STABLE ISOTOPE", sub: "Production grade" },
+  { number: "1663", label: "MELTING POINT °C", sub: "Won't break" },
+  { number: "+3", label: "OXIDATION STATE", sub: "Three forces" },
+  { number: "104", label: "NEUTRON COUNT", sub: "The invisible core" },
 ]
 
 export function PhilosophySection() {
@@ -33,10 +33,10 @@ export function PhilosophySection() {
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1, delay: 0.1 }}
             className="mb-4 inline-block font-display text-[10px] text-gold/70">
-            // THE YANIUM WAY
+            // ELEMENT DATA · Yn · 71
           </motion.span>
           <h2 className="font-display text-3xl tracking-[0.08em] md:text-5xl lg:text-6xl">
-            {["CODE", "IS", "A", "COMMODITY."].map((w, i) => (
+            {["NOT", "AN", "AGENCY."].map((w, i) => (
               <motion.span key={i} className="mr-[0.3em] inline-block text-silver"
                 initial={{ opacity: 0, y: 28, rotateX: -40 }}
                 animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
@@ -45,7 +45,7 @@ export function PhilosophySection() {
               </motion.span>
             ))}
             <br />
-            {["LOGIC", "IS", "THE"].map((w, i) => (
+            {["NOT", "A", "FREELANCER."].map((w, i) => (
               <motion.span key={i} className="mr-[0.3em] inline-block text-silver"
                 initial={{ opacity: 0, y: 28 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -53,11 +53,12 @@ export function PhilosophySection() {
                 {w}
               </motion.span>
             ))}
+            <br />
             <motion.span className="mr-[0.3em] inline-block text-shimmer"
               initial={{ opacity: 0, y: 28 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.55, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}>
-              LEVERAGE.
+              A NEW ELEMENT ENTIRELY.
             </motion.span>
           </h2>
         </motion.div>
@@ -67,37 +68,45 @@ export function PhilosophySection() {
           initial={{ opacity: 0, y: 40, scale: 0.97 }}
           animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="glass mx-auto mb-20 max-w-3xl rounded-lg p-8 md:p-12"
+          className="glass mx-auto mb-12 max-w-3xl rounded-lg p-8 md:p-12"
           style={{ willChange: "transform" }}>
           <p className="font-serif text-base italic leading-relaxed text-silver/80 md:text-lg md:leading-8">
-            The old way of development is a bottleneck. We&apos;ve replaced manual labor with{" "}
-            <span className="font-semibold not-italic text-gold">Vibe Coding</span> — a Human-AI hybrid workflow
-            that allows us to focus on <span className="not-italic text-silver">your business logic</span> while our
-            AI engines handle the infrastructure. We don&apos;t just write code; we{" "}
-            <span className="not-italic text-silver">orchestrate intelligence</span>.
+            In 1907, element 71 was discovered simultaneously by{" "}
+            <span className="font-semibold not-italic text-gold">three scientists on three continents</span>.
+            No one could hold it back. Some things are inevitable.
+          </p>
+          <p className="mt-6 font-serif text-base italic leading-relaxed text-silver/80 md:text-lg md:leading-8">
+            Yanium is that kind of force. A full-spectrum technology company built in{" "}
+            <span className="not-italic text-silver">Yerevan, Armenia</span> — covering AI automation,
+            web, mobile, backend, DevOps, QA, design, and brand identity under one roof with{" "}
+            <span className="not-italic text-silver">zero handoff gaps</span>.
+          </p>
+          <p className="mt-6 font-serif text-base italic leading-relaxed text-silver/80 md:text-lg md:leading-8">
+            We work with startups, established businesses, and enterprise clients. We build our own ventures.
+            We take on elite freelance engagements. We form long-term technical partnerships.
           </p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-gold/30 via-gold/10 to-transparent" />
           <div className="mt-6 flex items-center gap-4">
             <div className="h-2 w-2 rounded-full bg-code-green status-pulse" />
-            <span className="font-sans text-xs tracking-[0.2em] text-silver/50">HUMAN-AI HYBRID DEVELOPMENT PROTOCOL</span>
+            <span className="font-sans text-xs tracking-[0.2em] text-silver/50">ONE ELEMENT. EVERY COMPOUND YOU NEED.</span>
           </div>
         </motion.div>
 
-        {/* Pillars */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        {/* Element property strip */}
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
           {pillars.map((p, i) => (
             <MagneticCard key={p.label}>
               <motion.div
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.5 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: 0.5 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="group flex flex-col items-center text-center"
                 style={{ willChange: "transform" }}>
-                <div className="mb-4 flex h-14 w-14 items-center justify-center border border-gold/25 bg-gold/5 transition-all duration-500 group-hover:border-gold/60 group-hover:bg-gold/12 group-hover:shadow-[0_0_24px_rgba(212,175,55,0.22)]">
-                  <p.icon className="h-6 w-6 text-gold transition-transform duration-300 group-hover:scale-110" />
+                <div className="mb-3 flex h-14 w-full items-center justify-center border border-gold/20 bg-gold/5 transition-all duration-500 group-hover:border-gold/50 group-hover:bg-gold/10">
+                  <span className="font-display text-2xl font-bold text-gold">{p.number}</span>
                 </div>
-                <h4 className="mb-2 font-display text-[10px] tracking-[0.3em] text-gold">{p.label}</h4>
-                <p className="max-w-[180px] font-sans text-sm leading-relaxed text-silver/70">{p.desc}</p>
+                <h4 className="mb-1 font-display text-[9px] tracking-[0.2em] text-silver/70">{p.label}</h4>
+                <p className="font-mono text-[8px] tracking-[0.15em] text-silver/40">{p.sub}</p>
               </motion.div>
             </MagneticCard>
           ))}
