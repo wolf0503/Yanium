@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { ArrowRight, Loader2 } from "lucide-react"
+import { ArrowRight, Loader2, Linkedin } from "lucide-react"
 
 const inputClass = "w-full rounded-sm border border-white/15 bg-white/[0.06] px-4 py-3 font-sans text-sm text-silver outline-none transition-colors focus:border-gold/50 placeholder:text-silver/30"
 
@@ -122,6 +122,13 @@ export function FooterSection() {
             className="font-mono text-[10px] tracking-[0.2em] text-gold/60 underline decoration-gold/30 underline-offset-4 transition-colors hover:text-gold">
             SCHEDULE A CALL →
           </a>
+          <p className="mt-3 font-mono text-[10px] tracking-[0.15em] text-silver/35">
+            Or reach us at{" "}
+            <a href="mailto:hello@yanium.com"
+              className="text-gold/60 transition-colors hover:text-gold">
+              hello@yanium.com
+            </a>
+          </p>
         </motion.div>
 
         {/* Trust strip */}
@@ -156,6 +163,11 @@ export function FooterSection() {
             <span className="font-mono text-[9px] tracking-[0.2em] text-silver/25">© {new Date().getFullYear()} Yanium. Yerevan, Armenia.</span>
             <span className="hidden text-silver/15 md:inline">·</span>
             <span className="font-mono text-[9px] tracking-[0.2em] text-silver/25">The element that completes your stack.</span>
+            <span className="hidden text-silver/15 md:inline">·</span>
+            <a href="https://linkedin.com/company/yanium" target="_blank" rel="noopener noreferrer"
+              className="text-silver/30 transition-colors hover:text-gold/70" aria-label="Yanium on LinkedIn">
+              <Linkedin className="h-3.5 w-3.5" />
+            </a>
           </div>
         </div>
       </div>

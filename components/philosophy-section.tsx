@@ -93,7 +93,7 @@ export function PhilosophySection() {
         </motion.div>
 
         {/* Element property strip */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {pillars.map((p, i) => (
             <MagneticCard key={p.label}>
               <motion.div

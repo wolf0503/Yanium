@@ -23,7 +23,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-40 bg-gradient-to-b from-transparent to-obsidian" />
 
       {/* TOP — ambient tag + headline */}
-      <div className="absolute inset-x-0 top-0 z-10 flex flex-col items-center px-6 pt-24 text-center md:pt-28">
+      <div className="absolute inset-x-0 top-0 z-10 flex flex-col items-center px-6 pt-24 pb-32 text-center md:pt-28 md:pb-40">
         <motion.span
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,8 +32,7 @@ export function HeroSection() {
           // Yn · ELEMENT 71 · YANIUM · 288.07
         </motion.span>
 
-        <h1 className="font-display leading-tight tracking-[0.1em]"
-          style={{ fontSize: "clamp(1.7rem, 5vw, 4.2rem)" }}>
+        <h1 className="font-display text-4xl leading-tight tracking-[0.1em] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
           <span className="block text-silver">
             {headline1.map((ch, i) => (
               <motion.span key={i}

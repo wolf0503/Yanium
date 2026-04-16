@@ -9,9 +9,9 @@ const ventures = [
     code: "Yn-V01 · CV SENTINEL",
     title: "CV Sentinel",
     desc: "CV Sentinel analyzes career trajectories, tracks job market signals, and delivers actionable intelligence to help professionals make smarter, faster moves. Built for people who treat their career like an asset.",
-    status: "ACTIVE · Yn-175",
-    statusColor: "green" as const,
-    stat: { label: "Profiles Analyzed", value: "12,000+", sub: "and growing" },
+    status: "COMING SOON · Yn-175",
+    statusColor: "silver" as const,
+    stat: { label: "Status", value: "In Development", sub: "" },
   },
   {
     icon: TrendingUp,
@@ -20,7 +20,7 @@ const ventures = [
     desc: "ROI Sentinel indexes property data, forecasts market movements, and surfaces high-ROI opportunities before they become obvious to everyone else. Data-driven. Local-first. Built for serious investors.",
     status: "BETA · Yn-175",
     statusColor: "gold" as const,
-    stat: { label: "Data Points Indexed", value: "3.2M+", sub: "indexed" },
+    stat: { label: "Status", value: "In Development", sub: "" },
   },
   {
     icon: Activity,
@@ -29,7 +29,7 @@ const ventures = [
     desc: "Myzra applies the training principles of elite athletes to personal performance — structured, data-driven, and built for people who operate at high intensity and refuse to leave performance on the table.",
     status: "R&D · Yn-176",
     statusColor: "silver" as const,
-    stat: { label: "Neural Map", value: "v2.0", sub: "in development" },
+    stat: { label: "Status", value: "v2.0", sub: "in development" },
   },
 ]
 
@@ -85,12 +85,12 @@ function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: numbe
         {/* Description */}
         <p className="mb-6 font-serif text-sm italic leading-relaxed text-silver/70">{v.desc}</p>
 
-        {/* Clean stat — no loading bar */}
+        {/* Stat / status block */}
         <div className="border-t border-white/8 pt-5">
           <p className="mb-1 font-mono text-[9px] tracking-[0.2em] text-silver/40">{v.stat.label}</p>
           <div className="flex items-baseline gap-2">
-            <span className="font-display text-3xl tracking-wide text-gold">{v.stat.value}</span>
-            <span className="font-mono text-[10px] text-silver/35">{v.stat.sub}</span>
+            <span className={`font-display tracking-wide text-gold ${v.stat.sub ? "text-3xl" : "text-base"}`}>{v.stat.value}</span>
+            {v.stat.sub && <span className="font-mono text-[10px] text-silver/35">{v.stat.sub}</span>}
           </div>
         </div>
       </div>
@@ -122,8 +122,8 @@ export function VenturesSection() {
             initial={{ opacity: 0, y: 10 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mx-auto max-w-xl font-serif text-base italic leading-relaxed text-silver/65">
-            Our ventures are proof of method. Built with the same workflow, standards, and speed
-            we bring to every client engagement. No external funding required. No excuses accepted.
+            Our ventures are proof of vision. Built in-house using the same workflow, standards,
+            and speed we bring to every client engagement.
           </motion.p>
         </motion.div>
 
