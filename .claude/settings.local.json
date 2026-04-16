@@ -9,7 +9,14 @@
       "Bash(npx kill-port:*)",
       "Bash(taskkill /F /IM node.exe)",
       "Bash(python -c ':*)",
-      "Bash(python -c \"import sys,json; logs=json.loads\\(sys.stdin.read\\(\\)\\); errors=[l for l in logs if 'error' in l.get\\('type',''\\).lower\\(\\)]; print\\(json.dumps\\(errors[:5], indent=2\\)\\)\")"
+      "Bash(python -c \"import sys,json; logs=json.loads\\(sys.stdin.read\\(\\)\\); errors=[l for l in logs if 'error' in l.get\\('type',''\\).lower\\(\\)]; print\\(json.dumps\\(errors[:5], indent=2\\)\\)\")",
+      "Bash(tree -d -L 2 /c/projects/Yanium --ignore node_modules)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git -C /c/projects/Yanium diff f125ecc..d01227d -- components/hero-section.tsx)",
+      "Bash(git -C /c/projects/Yanium show f125ecc:components/hero-section.tsx)",
+      "Bash(git -C /c/projects/Yanium log f125ecc..d01227d --oneline)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
