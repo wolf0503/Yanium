@@ -46,7 +46,7 @@ export function ComparisonSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="comparison" className="relative py-32 px-6">
+    <section id="comparison" className="relative py-12 px-6 md:py-32">
       <div className="pointer-events-none absolute right-0 top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-gold/[0.02] blur-[130px]" />
       <div className="mx-auto max-w-5xl">
         <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}

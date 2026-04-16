@@ -31,7 +31,7 @@ export function FooterSection() {
   const navLinks = ["Services", "Ventures", "Team", "How We Work", "Book a Call"]
 
   return (
-    <footer id="contact" className="relative py-32 px-6">
+    <footer id="contact" className="relative py-12 px-6 md:py-32">
       <div className="mx-auto mb-20 h-px max-w-4xl bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
 
       <div className="mx-auto max-w-4xl">

@@ -28,7 +28,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-5 font-display text-[10px] tracking-[0.5em] text-gold/70">
+          className="mb-5 whitespace-nowrap overflow-hidden font-mono text-[8px] sm:text-[10px] tracking-[0.2em] text-gold/70">
           // Yn · ELEMENT 71 · YANIUM · 288.07
         </motion.span>
 

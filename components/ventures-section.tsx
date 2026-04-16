@@ -103,7 +103,7 @@ export function VenturesSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="ventures" className="relative py-32 px-6">
+    <section id="ventures" className="relative py-12 px-6 md:py-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[350px] w-[700px] -translate-x-1/2 rounded-full bg-gold/[0.018] blur-[130px]" />
       <div className="mx-auto max-w-6xl">
         <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}

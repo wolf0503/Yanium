@@ -99,7 +99,7 @@ export function TerminalSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="terminal" className="relative py-32 px-6">
+    <section id="terminal" className="relative py-12 px-6 md:py-32">
       <div className="mx-auto max-w-4xl">
         <motion.div ref={ref} initial={{ opacity: 0, y: 60 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="flex flex-col items-center">

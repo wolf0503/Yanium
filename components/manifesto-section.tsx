@@ -112,7 +112,7 @@ export function ManifestoSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="manifesto" className="relative py-32 px-6">
+    <section id="manifesto" className="relative py-12 px-6 md:py-32">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.025] blur-[160px]" />
       <div className="mx-auto max-w-6xl">
         <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}

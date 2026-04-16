@@ -20,7 +20,7 @@ export function PhilosophySection() {
   const headingY = useTransform(scrollYProgress, [0, 1], [40, -40])
 
   return (
-    <section id="philosophy" ref={sectionRef} className="relative py-32 px-6">
+    <section id="philosophy" ref={sectionRef} className="relative py-12 px-6 md:py-32">
       <div className="pointer-events-none absolute right-0 top-1/3 h-[500px] w-[500px] rounded-full bg-gold/[0.03] blur-[140px]" />
 
       <div className="mx-auto max-w-5xl">
