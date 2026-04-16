@@ -27,7 +27,8 @@
   }
   * { border-color: rgba(255,255,255,0.08); }
   *, *::before, *::after { cursor: none !important; }
-  body { background-color: #050505; color: #E0E0E0; overflow-x: hidden; }
+  html, body { overflow-x: hidden; }
+  body { background-color: #050505; color: #E0E0E0; }
 }
 
 @layer utilities {
@@ -242,6 +243,14 @@ body::before {
 /* Hide cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
   .cursor-glow { display: none !important; }
+}
+
+/* Force reduced section padding on mobile — fallback in case Tailwind md: doesn't activate */
+@media (max-width: 767px) {
+  section, footer {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
 }
 
 /* Smooth scroll */

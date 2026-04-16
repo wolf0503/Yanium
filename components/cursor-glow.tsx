@@ -1,12 +1,16 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function CursorGlow() {
+  const [isTouchDevice, setIsTouchDevice] = useState(true) // default true — hidden until confirmed desktop
   const dotRef = useRef<HTMLDivElement>(null)
   const posRef = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
-    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return
+    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0
+    setIsTouchDevice(isTouch)
+    if (isTouch) return
+
     const TRAIL = 10
     const trail = Array.from({ length: TRAIL }, (_, i) => {
       const el = document.createElement("div")
@@ -30,6 +34,8 @@ export function CursorGlow() {
     document.addEventListener("mousemove", onMove)
     return () => { document.removeEventListener("mousemove", onMove); cancelAnimationFrame(frame); trail.forEach(el => el.remove()) }
   }, [])
+
+  if (isTouchDevice) return null
 
   return (
     <div ref={dotRef} className="cursor-glow pointer-events-none fixed z-[9999] h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold"

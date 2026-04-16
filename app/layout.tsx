@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   keywords: ["AI automation company Armenia", "full-stack development Yerevan", "AI agents business", "Next.js development", "mobile app development", "product engineering", "DevOps Armenia"],
 }
-export const viewport: Viewport = { themeColor: "#050505" }
+export const viewport: Viewport = { themeColor: "#050505", width: "device-width", initialScale: 1 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
