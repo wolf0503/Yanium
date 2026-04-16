@@ -9,8 +9,13 @@ const tenor = Tenor_Sans({ subsets: ["latin"], weight: ["400"], variable: "--fon
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" })
 
 export const metadata: Metadata = {
-  title: "Yanium | Velocity of Intelligence",
-  description: "Premium AI-native development. Built for those who refuse to wait.",
+  title: "Yanium — Full-Stack AI & Product Engineering · Yerevan, Armenia",
+  description: "Yanium builds web apps, mobile products, and AI automation systems for startups, businesses, and enterprise. Full-stack team. No gaps. Based in Yerevan, Armenia.",
+  openGraph: {
+    title: "Yanium — The Element Missing From Your Stack.",
+    description: "Web · Mobile · AI Automation · DevOps · QA · Design. One team. Every layer. Yerevan, Armenia.",
+  },
+  keywords: ["AI automation company Armenia", "full-stack development Yerevan", "AI agents business", "Next.js development", "mobile app development", "product engineering", "DevOps Armenia"],
 }
 export const viewport: Viewport = { themeColor: "#050505" }
 
