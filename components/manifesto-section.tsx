@@ -1,27 +1,33 @@
 "use client"
 import { motion, useInView } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
-import { Crosshair, Cpu, ShieldCheck } from "lucide-react"
+import { Layers, Zap, Cpu, Users } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 
 const pillars = [
   {
-    icon: Crosshair,
+    icon: Layers,
     number: "01",
-    title: "SPEED AS A WEAPON",
-    desc: "If you aren't first, you're last. We compress timelines until the competition is irrelevant.",
+    title: "FULL COVERAGE",
+    desc: "1663°C — lutetium doesn't break under heat. Neither do we. We cover every layer so nothing falls through between teams, disciplines, or handoffs. Gaps kill products. We don't leave gaps.",
+  },
+  {
+    icon: Zap,
+    number: "02",
+    title: "SPEED AS STRUCTURE",
+    desc: "Slow execution isn't careful. It's expensive. We compress timelines until your advantage becomes irreversible. Speed is not a feature. It's the architecture.",
   },
   {
     icon: Cpu,
-    number: "02",
-    title: "AI-NATIVE DEVELOPMENT",
-    desc: "We speak the language of the machine. Every line of code is augmented by autonomous intelligence.",
+    number: "03",
+    title: "AI IS THE BASELINE",
+    desc: "Every build we ship is AI-augmented. Not because it's trending — because it's faster, smarter, and scales better than the alternative. We don't add AI on top. We build from it.",
   },
   {
-    icon: ShieldCheck,
-    number: "03",
-    title: "UNCOMPROMISING LOGIC",
-    desc: "Code is a commodity; intelligence is the edge. We engineer systems that think beyond their instructions.",
+    icon: Users,
+    number: "04",
+    title: "PARTNERS, NOT VENDORS",
+    desc: "Element 71 was discovered by three minds working independently toward the same truth. We operate like that with our clients — aligned to the same outcome, moving at the same velocity.",
   },
 ]
 
@@ -116,7 +122,7 @@ export function ManifestoSection() {
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1, delay: 0.1 }}
             className="mb-4 inline-block font-display text-[10px] text-gold/70">
-            // THE MANIFESTO
+            // PROPERTIES OF Yn
           </motion.span>
           <h2 className="font-display text-3xl tracking-[0.08em] text-silver md:text-5xl lg:text-6xl">
             WE DO NOT BILL HOURS.
@@ -125,7 +131,7 @@ export function ManifestoSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:gap-8 lg:grid-cols-4">
           {pillars.map((p, i) => (
             <PillarCard key={p.number} p={p} i={i} />
           ))}
