@@ -32,7 +32,7 @@ export function HeroSection() {
           // Yn · ELEMENT 71 · YANIUM · 288.07
         </motion.span>
 
-        <h1 className="font-display text-4xl leading-tight tracking-[0.1em] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+        <h1 className="font-display leading-tight tracking-[0.1em] text-[1.5rem] sm:text-[2.2rem] md:text-[3.2rem] lg:text-[4.2rem] xl:text-[5rem]">
           <span className="block text-silver">
             {headline1.map((ch, i) => (
               <motion.span key={i}
@@ -62,7 +62,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 max-w-sm font-mono text-[10px] leading-relaxed tracking-[0.15em] text-gold/60 md:max-w-md">
+          className="mt-5 hidden max-w-sm font-mono text-[10px] leading-relaxed tracking-[0.15em] text-gold/60 sm:block md:max-w-md">
           Yn — Atomic Number 71. The last rare earth element.<br />
           The one that completes the series. That&apos;s not a coincidence.
         </motion.p>

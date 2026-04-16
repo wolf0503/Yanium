@@ -6,6 +6,7 @@ export function CursorGlow() {
   const posRef = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return
     const TRAIL = 10
     const trail = Array.from({ length: TRAIL }, (_, i) => {
       const el = document.createElement("div")
@@ -31,7 +32,7 @@ export function CursorGlow() {
   }, [])
 
   return (
-    <div ref={dotRef} className="pointer-events-none fixed z-[9999] h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold"
+    <div ref={dotRef} className="cursor-glow pointer-events-none fixed z-[9999] h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold"
       style={{ boxShadow: "0 0 8px #D4AF37", left: 0, top: 0 }} />
   )
 }
