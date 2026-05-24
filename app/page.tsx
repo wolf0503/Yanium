@@ -1,5 +1,5 @@
 "use client"
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { TerminalSection } from "@/components/terminal-section"
@@ -19,7 +19,16 @@ import { SpaceBackground } from "@/components/space-background"
 
 export default function Page() {
   const [loaded, setLoaded] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const handleLoadComplete = useCallback(() => setLoaded(true), [])
+
+  useEffect(() => setMounted(true), [])
+
+  // Return a plain dark shell during SSR — NeuralLoader covers it on client anyway.
+  // This prevents Framer Motion initial/animate style mismatches between SSR and CSR.
+  if (!mounted) return (
+    <div className="fixed inset-0" style={{ backgroundColor: "#050505" }} />
+  )
 
   return (
     <>

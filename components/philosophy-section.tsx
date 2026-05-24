@@ -70,18 +70,18 @@ export function PhilosophySection() {
           transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="glass mx-auto mb-12 max-w-3xl rounded-lg p-8 md:p-12"
           style={{ willChange: "transform" }}>
-          <p className="font-serif text-base italic leading-relaxed text-silver/80 md:text-lg md:leading-8">
+          <p className="font-serif text-base leading-relaxed text-silver/80 md:text-lg md:leading-8">
             In 1907, element 71 was discovered simultaneously by{" "}
-            <span className="font-semibold not-italic text-gold">three scientists on three continents</span>.
+            <span className="font-semibold text-gold">three scientists on three continents</span>.
             No one could hold it back. Some things are inevitable.
           </p>
-          <p className="mt-6 font-serif text-base italic leading-relaxed text-silver/80 md:text-lg md:leading-8">
+          <p className="mt-6 font-serif text-base leading-relaxed text-silver/80 md:text-lg md:leading-8">
             Yanium is that kind of force. A full-spectrum technology company built in{" "}
-            <span className="not-italic text-silver">Yerevan, Armenia</span> — covering AI automation,
+            <span className="text-silver">Yerevan, Armenia</span> — covering AI automation,
             web, mobile, backend, DevOps, QA, design, and brand identity under one roof with{" "}
-            <span className="not-italic text-silver">zero handoff gaps</span>.
+            <span className="text-silver">zero handoff gaps</span>.
           </p>
-          <p className="mt-6 font-serif text-base italic leading-relaxed text-silver/80 md:text-lg md:leading-8">
+          <p className="mt-6 font-serif text-base leading-relaxed text-silver/80 md:text-lg md:leading-8">
             We work with startups, established businesses, and enterprise clients. We build our own ventures.
             We take on elite freelance engagements. We form long-term technical partnerships.
           </p>

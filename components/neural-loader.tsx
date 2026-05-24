@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef, useState, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 interface Node { x: number; y: number; vx: number; vy: number; size: number; alpha: number; phase: number; speed: number }
 
@@ -84,8 +85,15 @@ export function NeuralLoader({ onComplete }: { onComplete: () => void }) {
         transition={{ duration: 0.8 }} className="fixed inset-0 z-[9999] flex flex-col items-center justify-center" style={{ backgroundColor: "#050505" }}>
         <canvas ref={canvasRef} className="absolute inset-0" aria-hidden="true" />
         <div className="relative z-10 flex flex-col items-center gap-8">
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="flex flex-col items-center gap-3">
-            <div className="font-display text-4xl tracking-[0.25em] text-gold md:text-5xl">YANIUM</div>
+          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="flex flex-col items-center gap-4">
+            <Image
+              src="/logo-icon.png"
+              alt="Yanium"
+              width={96}
+              height={96}
+              className="drop-shadow-[0_0_24px_rgba(212,175,55,0.5)]"
+              priority
+            />
             <div className="font-mono text-xs tracking-[0.3em] text-silver/40">INITIALIZING INTELLIGENCE ENGINE</div>
           </motion.div>
           <div className="flex flex-col items-center gap-3">

@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 import { ArrowRight, Loader2, Linkedin } from "lucide-react"
+import Image from "next/image"
 
 const inputClass = "w-full rounded-sm border border-white/15 bg-white/[0.06] px-4 py-3 font-sans text-sm text-silver outline-none transition-colors focus:border-gold/50 placeholder:text-silver/30"
 
@@ -43,7 +44,7 @@ export function FooterSection() {
             <br />
             <span className="text-gold">WORTH BUILDING.</span>
           </h2>
-          <p className="mx-auto mb-16 max-w-lg font-serif text-base italic leading-relaxed text-silver/65">
+          <p className="mx-auto mb-16 max-w-lg font-serif text-base leading-relaxed text-silver/65">
             We take on a focused number of engagements at a time.
             Tell us what you&apos;re working on — we&apos;ll respond within 24 hours.
             No pitch decks. No sales calls. Just a real conversation.
@@ -109,7 +110,7 @@ export function FooterSection() {
             </div>
             <h3 className="mb-2 font-display text-2xl tracking-[0.1em] text-silver">REACTION INITIATED</h3>
             <p className="font-mono text-xs tracking-[0.15em] text-silver/50">INQUIRY RECEIVED</p>
-            <p className="mt-3 font-serif text-sm italic text-silver/60">We will review and respond within 24 hours.</p>
+            <p className="mt-3 font-serif text-sm text-silver/60">We will review and respond within 24 hours.</p>
           </motion.div>
         )}
 
@@ -117,7 +118,7 @@ export function FooterSection() {
         <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-8 text-center">
-          <p className="mb-3 font-serif text-sm italic text-silver/40">Prefer to talk directly?</p>
+          <p className="mb-3 font-serif text-sm text-silver/40">Prefer to talk directly?</p>
           <a href="#contact"
             className="font-mono text-[10px] tracking-[0.2em] text-gold/60 underline decoration-gold/30 underline-offset-4 transition-colors hover:text-gold">
             SCHEDULE A CALL →
@@ -143,14 +144,22 @@ export function FooterSection() {
         {/* Footer bottom */}
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-white/8 pt-8">
           <div className="flex items-center gap-3">
-            <div className="relative flex h-7 w-7 items-center justify-center border border-gold/45 bg-gold/5">
-              <span className="pointer-events-none absolute -left-[1.5px] -top-[1.5px] h-2 w-2 border-l border-t border-gold/65" />
-              <span className="pointer-events-none absolute -bottom-[1.5px] -right-[1.5px] h-2 w-2 border-b border-r border-gold/65" />
-              <span className="font-display text-xs font-bold leading-none text-gold">Yn</span>
-            </div>
-            <span className="font-display text-sm tracking-[0.25em] text-silver/60">YANIUM</span>
+            <Image
+              src="/logo-icon.png"
+              alt="Yanium"
+              width={28}
+              height={28}
+              className="opacity-80"
+            />
+            <Image
+              src="/logo-wordmark.png"
+              alt="YANIUM"
+              width={90}
+              height={18}
+              className="object-contain opacity-60"
+            />
           </div>
-          <p className="font-serif text-xs italic text-silver/35">The Missing Element.</p>
+          <p className="font-serif text-xs text-silver/35">The Missing Element.</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {navLinks.map(l => (
               <a key={l} href={l === "Book a Call" ? "#contact" : `#${l.toLowerCase().replace(/ /g, "-")}`}

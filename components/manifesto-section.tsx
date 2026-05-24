@@ -92,7 +92,7 @@ function PillarCard({ p, i }: { p: { icon: LucideIcon; number: string; title: st
       </div>
 
       <h3 className="mb-3 font-display text-lg tracking-[0.12em] text-silver md:text-xl">{p.title}</h3>
-      <p className="max-w-xs font-serif text-sm italic leading-relaxed text-silver/70">{p.desc}</p>
+      <p className="max-w-xs font-serif text-sm leading-relaxed text-silver/70">{p.desc}</p>
 
       {/* Animated underline */}
       <div className="mt-5 overflow-hidden" style={{ width: "60px", height: "1px" }}>

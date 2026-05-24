@@ -83,7 +83,7 @@ function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: numbe
         <h3 className="mb-2 font-display text-xl tracking-[0.08em] text-silver">{v.title}</h3>
 
         {/* Description */}
-        <p className="mb-6 font-serif text-sm italic leading-relaxed text-silver/70">{v.desc}</p>
+        <p className="mb-6 font-serif text-sm leading-relaxed text-silver/70">{v.desc}</p>
 
         {/* Stat / status block */}
         <div className="border-t border-white/8 pt-5">
@@ -121,7 +121,7 @@ export function VenturesSection() {
           <motion.p
             initial={{ opacity: 0, y: 10 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mx-auto max-w-xl font-serif text-base italic leading-relaxed text-silver/65">
+            className="mx-auto max-w-xl font-serif text-base leading-relaxed text-silver/65">
             Our ventures are proof of vision. Built in-house using the same workflow, standards,
             and speed we bring to every client engagement.
           </motion.p>

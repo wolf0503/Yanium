@@ -7,7 +7,9 @@ export function CursorGlow() {
   const posRef = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
-    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0
+    // Use pointer: fine media query — reliably detects mouse/trackpad vs touch-only.
+    // maxTouchPoints > 0 wrongly flags touch-enabled laptops as touch devices.
+    const isTouch = !window.matchMedia("(pointer: fine)").matches
     setIsTouchDevice(isTouch)
     if (isTouch) return
 

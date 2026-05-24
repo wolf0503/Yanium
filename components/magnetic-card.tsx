@@ -10,7 +10,7 @@ export function MagneticCard({ children, className = "", strength = 0.12 }: { ch
   }
   const onLeave = () => { if (ref.current) ref.current.style.transform = "translate(0,0)" }
   return (
-    <div ref={ref} className={className} onMouseMove={onMove} onMouseLeave={onLeave} style={{ transition: "transform 0.4s cubic-bezier(0.22,1,0.36,1)" }}>
+    <div ref={ref} className={`relative ${className}`} onMouseMove={onMove} onMouseLeave={onLeave} style={{ transition: "transform 0.4s cubic-bezier(0.22,1,0.36,1)" }}>
       {children}
     </div>
   )

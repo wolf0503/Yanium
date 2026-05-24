@@ -73,7 +73,7 @@ export function ComparisonSection() {
           </h2>
           <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mx-auto mt-4 max-w-md font-serif text-sm italic text-silver/50">
+            className="mx-auto mt-4 max-w-md font-serif text-sm text-silver/50">
             Element 71 was the last rare earth to be isolated.
             Everyone thought the series was complete. It wasn&apos;t.
           </motion.p>

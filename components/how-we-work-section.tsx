@@ -60,7 +60,7 @@ export function HowWeWorkSection() {
           </h2>
           <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mt-5 max-w-xl font-serif text-base italic text-silver/60">
+            className="mx-auto mt-5 max-w-xl font-serif text-base text-silver/60">
             We run a Human-AI hybrid workflow we call Vibe Engineering. Our specialists own the
             architecture, business logic, and strategy. Our AI systems handle scaffolding,
             boilerplate, and iteration cycles.
@@ -77,7 +77,7 @@ export function HowWeWorkSection() {
               className="group relative overflow-hidden rounded-lg border border-white/[0.07] bg-white/[0.02] p-6 transition-all duration-500 hover:border-gold/25 hover:bg-gold/[0.03]">
               <span className="mb-4 block font-display text-4xl font-bold text-gold/15 select-none">{s.num}</span>
               <p className="mb-1 font-mono text-[9px] tracking-[0.3em] text-gold/60">// {s.num} · {s.label}</p>
-              <p className="mb-4 font-serif text-sm italic leading-relaxed text-silver/70">{s.body}</p>
+              <p className="mb-4 font-serif text-sm leading-relaxed text-silver/70">{s.body}</p>
               <div className="border-t border-white/[0.06] pt-3">
                 <span className="font-mono text-[9px] tracking-[0.15em] text-silver/35">{s.timeline}</span>
               </div>
@@ -97,7 +97,7 @@ export function HowWeWorkSection() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
             {timelines.map((t, i) => (
               <div key={i} className="flex flex-col gap-1">
-                <span className="font-serif text-sm italic text-silver/60">{t.label}</span>
+                <span className="font-serif text-sm text-silver/60">{t.label}</span>
                 <span className="font-display text-base tracking-[0.1em] text-gold">{t.value}</span>
               </div>
             ))}

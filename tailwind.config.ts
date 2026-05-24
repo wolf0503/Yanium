@@ -16,10 +16,10 @@ const config: Config = {
         "code-green": "#0FF043",
       },
       fontFamily: {
-        display: ["var(--font-cinzel)"],
-        serif: ["var(--font-cormorant)"],
-        sans: ["var(--font-tenor)"],
-        mono: ["var(--font-jetbrains)"],
+        display: ["'ClashGrotesk-Variable'", "sans-serif"],
+        serif: ["'ClashGrotesk-Variable'", "sans-serif"],
+        sans: ["'ClashGrotesk-Variable'", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "monospace"],
       },
       borderRadius: { lg: "var(--radius)", md: "calc(var(--radius) - 2px)", sm: "calc(var(--radius) - 4px)" },
       keyframes: {

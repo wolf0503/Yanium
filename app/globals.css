@@ -26,22 +26,25 @@
     --radius: 0.5rem;
   }
   * { border-color: rgba(255,255,255,0.08); }
-  *, *::before, *::after { cursor: none !important; }
+  /* Hide system cursor only on fine-pointer (mouse/trackpad) devices */
+  @media (pointer: fine) {
+    *, *::before, *::after { cursor: none !important; }
+  }
   html, body { overflow-x: hidden; }
-  body { background-color: #050505; color: #E0E0E0; }
+  body { background-color: #050505; color: #E0E0E0; position: relative; }
 }
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
 }
 
-/* Noise texture overlay */
+/* Noise texture overlay — sits above page sections but below loader (9999) and cursor (9998) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 200;
   opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }

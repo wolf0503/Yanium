@@ -59,7 +59,7 @@ export function TeamSection() {
           </h2>
           <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mt-5 max-w-xl font-serif text-base italic text-silver/60">
+            className="mx-auto mt-5 max-w-xl font-serif text-base text-silver/60">
             In lutetium&apos;s nucleus, 104 neutrons do the invisible work.
             No one sees them. Everything depends on them.
             Yanium is built the same way.
@@ -96,7 +96,7 @@ export function TeamSection() {
           initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col items-center gap-3 text-center">
-          <p className="max-w-xl font-serif text-sm italic leading-relaxed text-silver/55">
+          <p className="max-w-xl font-serif text-sm leading-relaxed text-silver/55">
             We don&apos;t list headcounts. We list capabilities. Every specialist on a Yanium project
             is exactly where they need to be — not assigned by availability, but matched by expertise.
           </p>

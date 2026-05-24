@@ -103,7 +103,7 @@ function PillarCard({ s, i, isInView }: { s: typeof pillars[0]; i: number; isInV
 
         <p className="mb-1 font-mono text-[9px] tracking-[0.3em] text-gold/55">{s.tag}</p>
         <h3 className="mb-3 font-display text-lg tracking-[0.08em] text-silver md:text-xl">{s.label}</h3>
-        <p className="mb-5 font-serif text-sm italic leading-relaxed text-silver/70">{s.desc}</p>
+        <p className="mb-5 font-serif text-sm leading-relaxed text-silver/70">{s.desc}</p>
 
         <ul className="mb-5 flex flex-wrap gap-2">
           {s.detail.map(d => (
@@ -148,7 +148,7 @@ export function ServicesSection() {
           </h2>
           <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mt-4 max-w-xl font-serif text-base italic text-silver/60">
+            className="mx-auto mt-4 max-w-xl font-serif text-base text-silver/60">
             Lutetium&apos;s oxidation state is always +3 — stable, unified, never varies.
             Yanium operates the same way. Three forces. Every engagement. One system.
           </motion.p>

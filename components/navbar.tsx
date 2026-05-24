@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 const navLinks = [
   { label: "WHAT WE ARE", href: "#philosophy" },
@@ -9,21 +10,28 @@ const navLinks = [
   { label: "HOW WE WORK", href: "#how-we-work" },
   { label: "VENTURES",    href: "#ventures" },
   { label: "TEAM",        href: "#team" },
-  { label: "WORK WITH US",href: "#contact" },
+  { label: "CONTACT",     href: "#contact" },
 ]
 
 function YnLogo() {
   return (
     <a href="#hero" className="group flex items-center gap-3">
-      <div className="relative flex h-9 w-9 shrink-0 flex-col items-center justify-center border border-gold/55 bg-gold/8 transition-all duration-500 group-hover:border-gold group-hover:bg-gold/15"
-        style={{ boxShadow: "0 0 12px rgba(212,175,55,0.1)" }}>
-        <span className="pointer-events-none absolute -left-[2px] -top-[2px] h-2 w-2 border-l border-t border-gold" />
-        <span className="pointer-events-none absolute -bottom-[2px] -right-[2px] h-2 w-2 border-b border-r border-gold" />
-        <span className="font-display absolute left-[4px] top-[3px] text-[6px] leading-none text-gold/60">71</span>
-        <span className="font-display text-base font-bold leading-none text-gold">Yn</span>
-        <span className="font-display text-[5px] leading-none text-gold/60">288.07</span>
-      </div>
-      <span className="font-display text-xl tracking-[0.25em] text-silver transition-colors duration-300 group-hover:text-gold">YANIUM</span>
+      <Image
+        src="/logo-icon.png"
+        alt="Yanium"
+        width={36}
+        height={36}
+        className="shrink-0 transition-opacity duration-300 group-hover:opacity-75"
+        priority
+      />
+      <Image
+        src="/logo-wordmark.png"
+        alt="YANIUM"
+        width={110}
+        height={22}
+        className="hidden sm:block object-contain transition-opacity duration-300 group-hover:opacity-75"
+        priority
+      />
     </a>
   )
 }

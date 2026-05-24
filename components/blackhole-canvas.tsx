@@ -17,13 +17,14 @@ export function BlackholeCanvas({ className = "" }: { className?: string }) {
     let cx = W / 2, cy = H / 2
 
     // All distances scale off the smallest dimension — keeps circle perfect on every screen
+    const PARALLAX = [0.022, 0.013, 0.005]
+
     const buildScene = () => {
       const BASE = Math.min(W, H)
       const EH = Math.round(BASE * 0.155)
       const DISK_MIN = BASE * 0.19
       const DISK_RANGE = BASE * 0.54
 
-      const PARALLAX = [0.022, 0.013, 0.005]
       const stars = Array.from({ length: 280 }, () => ({
         x: Math.random(), y: Math.random(),
         r: Math.random() * 1.1 + 0.2,

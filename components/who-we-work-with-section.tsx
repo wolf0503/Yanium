@@ -41,7 +41,7 @@ export function WhoWeWorkWithSection() {
           </h2>
           <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mt-5 max-w-xl font-serif text-base italic text-silver/60">
+            className="mx-auto mt-5 max-w-xl font-serif text-base text-silver/60">
             Like lutetium forming stable compounds with any element it meets —
             Yanium adapts to your context without compromising the core.
           </motion.p>
@@ -55,7 +55,7 @@ export function WhoWeWorkWithSection() {
               transition={{ duration: 0.6, delay: 0.2 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="group relative overflow-hidden rounded-lg border border-white/[0.07] bg-white/[0.02] p-7 transition-all duration-500 hover:border-gold/25 hover:bg-gold/[0.03]">
               <p className="mb-4 font-mono text-[9px] tracking-[0.25em] text-gold/60">{c.tag}</p>
-              <p className="font-serif text-sm italic leading-relaxed text-silver/70">{c.body}</p>
+              <p className="font-serif text-sm leading-relaxed text-silver/70">{c.body}</p>
               <span className="pointer-events-none absolute -left-[2px] -top-[2px] h-4 w-4 border-l border-t border-gold/20 transition-all duration-500 group-hover:border-gold/45" />
               <span className="pointer-events-none absolute -bottom-[2px] -right-[2px] h-4 w-4 border-b border-r border-gold/20 transition-all duration-500 group-hover:border-gold/45" />
             </motion.div>
@@ -69,7 +69,7 @@ export function WhoWeWorkWithSection() {
           transition={{ duration: 0.6, delay: 0.55 }}
           className="glass mb-10 rounded-lg p-6 text-center">
           <p className="mb-1 font-mono text-[9px] tracking-[0.25em] text-silver/40">// FREELANCE ENGAGEMENTS</p>
-          <p className="font-serif text-sm italic text-silver/65">
+          <p className="font-serif text-sm text-silver/65">
             Need elite execution on a specific build?
             We take select freelance projects when the challenge is worth it.
           </p>
@@ -78,7 +78,7 @@ export function WhoWeWorkWithSection() {
         <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.65 }}
           className="flex flex-col items-center gap-4">
-          <p className="font-serif text-sm italic text-silver/50">Not sure which fits? Let&apos;s find out.</p>
+          <p className="font-serif text-sm text-silver/50">Not sure which fits? Let&apos;s find out.</p>
           <a href="#contact"
             className="pulse-glow border border-gold/50 bg-gold/[0.07] px-10 py-4 font-display text-xs tracking-[0.35em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.18] hover:shadow-[0_0_32px_rgba(212,175,55,0.3)]">
             BOOK A CALL
