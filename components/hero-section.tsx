@@ -105,7 +105,7 @@ export function HeroSection() {
 
         {/* Planet render — full bleed, anchored to top center */}
         <Image
-          src="/bg_planet.jpg"
+          src="/bg_planet.png"
           alt=""
           fill
           priority
