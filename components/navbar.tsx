@@ -29,7 +29,7 @@ function YnLogo() {
         alt="YANIUM"
         width={110}
         height={22}
-        className="hidden sm:block object-contain transition-opacity duration-300 group-hover:opacity-75"
+        className="hidden md:block object-contain transition-opacity duration-300 group-hover:opacity-75"
         priority
       />
     </a>
@@ -55,8 +55,8 @@ export function Navbar() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-400 ${
           scrolled
-            ? "border-b border-gold/15 py-3 shadow-[0_4px_32px_rgba(0,0,0,0.7)]"
-            : "py-5"
+            ? "border-b border-gold/15 py-2.5 shadow-[0_4px_32px_rgba(0,0,0,0.7)]"
+            : "py-3.5 md:py-5"
         }`}
         style={{
           background: scrolled
@@ -65,7 +65,7 @@ export function Navbar() {
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
         }}>
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
           <YnLogo />
           <div className="hidden items-center gap-8 md:flex">
             {navLinks.map(link => (

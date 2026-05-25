@@ -104,7 +104,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0" style={{ zIndex: 1 }}>
 
         {/* Planet render — constrained height on mobile, full bleed on desktop */}
-        <div className="absolute inset-x-0 top-0 h-[52svh] md:bottom-0 md:h-full">
+        <div className="absolute inset-x-0 top-0 h-[68svh] md:bottom-0 md:h-full">
           <Image
             src="/bg_planet.png"
             alt=""
@@ -112,8 +112,7 @@ export function HeroSection() {
             priority
             quality={95}
             sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: "center top" }}
+            className="object-cover object-[center_28%] md:object-top"
           />
         </div>
 
@@ -131,8 +130,8 @@ export function HeroSection() {
         <div
           className="absolute inset-x-0 bottom-0"
           style={{
-            height: "55%",
-            background: "linear-gradient(to bottom, transparent 0%, rgba(5,5,5,0.6) 40%, #050505 75%)",
+            height: "60%",
+            background: "linear-gradient(to bottom, transparent 0%, rgba(5,5,5,0.55) 45%, #050505 80%)",
           }}
         />
       </div>
