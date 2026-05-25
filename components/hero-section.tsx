@@ -99,167 +99,38 @@ export function HeroSection() {
     >
 
       {/* ══════════════════════════════════════════════════════════
-          LAYER 1 — PLANET VISUAL
+          LAYER 1 — PLANET BACKGROUND IMAGE
       ══════════════════════════════════════════════════════════ */}
       <div className="pointer-events-none absolute inset-0" style={{ zIndex: 1 }}>
 
-        {/* 1a — Hair-line vertical light shaft */}
-        <div
-          className="absolute left-1/2 top-0 -translate-x-1/2"
-          style={{
-            width: 1,
-            height: "44%",
-            background: "linear-gradient(to bottom, transparent 0%, transparent 5%, rgba(255,252,200,0.88) 52%, rgba(255,220,60,0.65) 78%, transparent 100%)",
-          }}
+        {/* Planet render — full bleed, anchored to top center */}
+        <Image
+          src="/planet-hero.jpg"
+          alt=""
+          fill
+          priority
+          quality={95}
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition: "center top" }}
         />
-        {/* 1b — Soft wider shaft glow */}
+
+        {/* Left edge fade into site bg */}
         <div
-          className="absolute left-1/2 top-0 -translate-x-1/2"
+          className="absolute inset-y-0 left-0"
+          style={{ width: "10%", background: "linear-gradient(to right, #050505 0%, transparent 100%)" }}
+        />
+        {/* Right edge fade */}
+        <div
+          className="absolute inset-y-0 right-0"
+          style={{ width: "10%", background: "linear-gradient(to left, #050505 0%, transparent 100%)" }}
+        />
+        {/* Bottom fade into main content */}
+        <div
+          className="absolute inset-x-0 bottom-0"
           style={{
-            width: 6,
             height: "40%",
-            background: "linear-gradient(to bottom, transparent, rgba(255,240,120,0.10) 58%, transparent)",
-            filter: "blur(3px)",
-          }}
-        />
-
-        {/* 2 — Wide corona bloom above sphere */}
-        <div
-          className="absolute left-1/2 top-0 -translate-x-1/2"
-          style={{
-            width: "min(66vw,600px)",
-            height: "32%",
-            background: "radial-gradient(ellipse at top, rgba(255,252,178,0.52) 0%, rgba(255,218,55,0.26) 26%, rgba(212,175,55,0.07) 58%, transparent 80%)",
-            filter: "blur(24px)",
-          }}
-        />
-
-        {/* 3 — Orbital ring */}
-        <div
-          className="absolute left-1/2 top-0 -translate-x-1/2"
-          style={{ width: "min(98vw,920px)", marginTop: "-3%" }}
-        >
-          <svg viewBox="0 0 920 920" fill="none" style={{ width: "100%", height: "auto" }}>
-            <ellipse cx="460" cy="420" rx="444" ry="144"
-              stroke="rgba(212,175,55,0.22)" strokeWidth="1" transform="rotate(-9 460 420)" />
-            <ellipse cx="460" cy="420" rx="444" ry="144"
-              stroke="rgba(212,175,55,0.08)" strokeWidth="5" transform="rotate(-9 460 420)" />
-          </svg>
-        </div>
-
-        {/* 4 — Planet sphere */}
-        <div
-          className="absolute left-1/2 top-0 -translate-x-1/2"
-          style={{
-            width:  "min(76vw,720px)",
-            height: "min(76vw,720px)",
-            borderRadius: "50%",
-            marginTop: "-10%",
-            background: [
-              "radial-gradient(circle at 50% 16%,",
-              "  rgba(88,60,12,0.90) 0%,",
-              "  rgba(44,28,6,0.97) 14%,",
-              "  rgba(15,10,2,1) 36%,",
-              "  rgba(5,3,1,1) 62%,",
-              "  #010000 100%)",
-            ].join(""),
-            boxShadow: [
-              "0 0 0 1px rgba(212,175,55,0.09)",
-              "0 0 80px rgba(212,175,55,0.14)",
-              "0 0 240px rgba(212,175,55,0.05)",
-            ].join(","),
-          }}
-        >
-          {/* 4a — Bright inner star point at north pole */}
-          <div style={{
-            position: "absolute",
-            top: 0,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "18%",
-            height: "18%",
-            background: "radial-gradient(circle at 50% 0%, rgba(255,255,248,1) 0%, rgba(255,250,192,0.96) 22%, rgba(255,228,78,0.52) 52%, transparent 76%)",
-            filter: "blur(2px)",
-          }} />
-
-          {/* 4b — Wide north-pole burst */}
-          <div style={{
-            position: "absolute",
-            top: "-4px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "68%",
-            height: "40%",
-            background: "radial-gradient(ellipse at top, rgba(255,252,200,0.94) 0%, rgba(255,228,68,0.74) 10%, rgba(212,175,55,0.36) 36%, transparent 66%)",
-            filter: "blur(11px)",
-          }} />
-
-          {/* 4c — Secondary wider atmospheric burst */}
-          <div style={{
-            position: "absolute",
-            top: "-8px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "92%",
-            height: "44%",
-            background: "radial-gradient(ellipse at top, rgba(212,175,55,0.19) 0%, rgba(212,175,55,0.06) 40%, transparent 70%)",
-            filter: "blur(30px)",
-          }} />
-
-          {/* 4d — Surface terrain simulation */}
-          <div style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "50%",
-            background: [
-              "radial-gradient(circle at 34% 38%, rgba(95,65,16,0.20) 0%, transparent 24%)",
-              "radial-gradient(circle at 64% 42%, rgba(68,45,10,0.16) 0%, transparent 20%)",
-              "radial-gradient(circle at 50% 62%, rgba(38,25,5,0.13) 0%, transparent 22%)",
-              "radial-gradient(circle at 24% 54%, rgba(75,50,12,0.11) 0%, transparent 18%)",
-              "radial-gradient(circle at 76% 34%, rgba(52,35,8,0.09) 0%, transparent 16%)",
-              "radial-gradient(circle at 42% 74%, rgba(42,28,6,0.10) 0%, transparent 14%)",
-              "radial-gradient(circle at 68% 58%, rgba(60,40,9,0.08) 0%, transparent 16%)",
-            ].join(","),
-          }} />
-
-          {/* 4e — Atmospheric rim glow */}
-          <div style={{
-            position: "absolute",
-            inset: -3,
-            borderRadius: "50%",
-            boxShadow: "0 0 58px rgba(212,175,55,0.21), inset 0 0 30px rgba(212,175,55,0.05)",
-          }} />
-        </div>
-
-        {/* 5 — Floating accent circles (visible in mockup) */}
-        <div
-          className="absolute hidden lg:block"
-          style={{ top: "35%", left: "13%", zIndex: 2 }}
-        >
-          <div style={{
-            width: 8, height: 8, borderRadius: "50%",
-            border: "1.5px solid rgba(212,175,55,0.40)",
-            background: "rgba(212,175,55,0.07)",
-          }} />
-        </div>
-        <div
-          className="absolute hidden lg:block"
-          style={{ top: "12%", right: "13%", zIndex: 2 }}
-        >
-          <div style={{
-            width: 7, height: 7, borderRadius: "50%",
-            border: "1.5px solid rgba(212,175,55,0.32)",
-            background: "rgba(212,175,55,0.05)",
-          }} />
-        </div>
-
-        {/* 6 — Bottom vignette */}
-        <div
-          className="absolute inset-x-0"
-          style={{
-            top: "48%",
-            bottom: 0,
-            background: "linear-gradient(to bottom, transparent 0%, rgba(5,5,5,0.62) 42%, #050505 100%)",
+            background: "linear-gradient(to bottom, transparent 0%, rgba(5,5,5,0.72) 50%, #050505 100%)",
           }}
         />
       </div>
