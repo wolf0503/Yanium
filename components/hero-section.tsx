@@ -87,8 +87,8 @@ const statsItems = [
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-const CAP_H  = 116
-const STAT_H = 32
+const CAP_H  = 88
+const STAT_H = 26
 
 export function HeroSection() {
   return (
@@ -365,7 +365,7 @@ export function HeroSection() {
           {capabilities.map(({ Icon, title, desc }, i) => (
             <div
               key={title}
-              className={`flex h-full items-center gap-4 px-5 py-3 transition-colors duration-300 hover:bg-gold/[0.03] ${
+              className={`flex h-full items-center gap-3 px-5 py-2 transition-colors duration-300 hover:bg-gold/[0.03] ${
                 i === 3 ? "" : i === 1 ? "lg:border-r lg:border-gold/12" : "border-r border-gold/12"
               }`}
             >
