@@ -94,18 +94,13 @@ export function NeuralLoader({ onComplete }: { onComplete: () => void }) {
               className="drop-shadow-[0_0_24px_rgba(212,175,55,0.5)]"
               priority
             />
-            <div className="font-mono text-xs tracking-[0.3em] text-silver/40">INITIALIZING INTELLIGENCE ENGINE</div>
+            <div className="font-mono text-sm tracking-[0.3em] text-silver/40">INITIALIZING INTELLIGENCE ENGINE</div>
           </motion.div>
           <div className="flex flex-col items-center gap-3">
             <div className="h-px w-64 overflow-hidden bg-silver/10 md:w-80">
               <motion.div className="h-full" style={{ width: `${progress}%`, background: "linear-gradient(90deg,rgba(212,175,55,0.1),rgba(212,175,55,0.8))", boxShadow: "0 0 12px rgba(212,175,55,0.4)" }} transition={{ duration: 0.1 }} />
             </div>
-            <div className="font-mono text-[10px] tracking-[0.2em] text-gold/60">{Math.floor(progress)}% LOADED</div>
-          </div>
-          <div className="flex flex-col items-center gap-1">
-            {[{ t: "> YANIUM_ENGINE: Online", p: 15 }, { t: "> NEURAL_MESH: Connected", p: 40 }, { t: "> LOGIC_CORE: Calibrating", p: 65 }, { t: "> SYSTEMS: Ready", p: 85 }].map(s => (
-              <motion.div key={s.t} initial={{ opacity: 0 }} animate={{ opacity: progress > s.p ? 0.5 : 0 }} className="font-mono text-[10px] tracking-wider text-code-green/60">{s.t}</motion.div>
-            ))}
+            <div className="font-mono text-[12px] tracking-[0.2em] text-gold/60">{Math.floor(progress)}% LOADED</div>
           </div>
         </div>
       </motion.div>

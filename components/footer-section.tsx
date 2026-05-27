@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion"
 import { ArrowRight, Loader2, Linkedin } from "lucide-react"
 import Image from "next/image"
 
-const inputClass = "w-full rounded-sm border border-white/15 bg-white/[0.06] px-4 py-3 font-sans text-sm text-silver outline-none transition-colors focus:border-gold/50 placeholder:text-silver/30"
+const inputClass = "w-full rounded-sm border border-white/15 bg-white/[0.06] px-4 py-3 font-sans text-base text-silver outline-none transition-colors focus:border-gold/50 placeholder:text-silver/30"
 
 const serviceOptions = [
   "Web or Mobile Product",
@@ -38,7 +38,7 @@ export function FooterSection() {
       <div className="mx-auto max-w-4xl">
         <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }} className="text-center">
-          <span className="mb-4 inline-block font-display text-[10px] tracking-[0.4em] text-gold/70">// INITIATE REACTION · Work With Yn</span>
+          <span className="mb-4 inline-block font-display text-[12px] tracking-[0.4em] text-gold/70">// INITIATE REACTION · Work With Yn</span>
           <h2 className="mb-4 font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">
             LET&apos;S BUILD SOMETHING
             <br />
@@ -57,25 +57,25 @@ export function FooterSection() {
             onSubmit={handleSubmit} className="glass mx-auto max-w-xl rounded-lg p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="font-mono text-[10px] tracking-[0.25em] text-silver/55">// NAME *</label>
+                <label htmlFor="name" className="font-mono text-[12px] tracking-[0.25em] text-silver/55">// NAME *</label>
                 <input id="name" type="text" required value={form.name}
                   onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
                   className={inputClass} placeholder="Your name" />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="company" className="font-mono text-[10px] tracking-[0.25em] text-silver/55">// COMPANY / PROJECT *</label>
+                <label htmlFor="company" className="font-mono text-[12px] tracking-[0.25em] text-silver/55">// COMPANY / PROJECT *</label>
                 <input id="company" type="text" required value={form.company}
                   onChange={e => setForm(p => ({ ...p, company: e.target.value }))}
                   className={inputClass} placeholder="Company or project name" />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="font-mono text-[10px] tracking-[0.25em] text-silver/55">// EMAIL *</label>
+                <label htmlFor="email" className="font-mono text-[12px] tracking-[0.25em] text-silver/55">// EMAIL *</label>
                 <input id="email" type="email" required value={form.email}
                   onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
                   className={inputClass} placeholder="your@email.com" />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="service" className="font-mono text-[10px] tracking-[0.25em] text-silver/55">// WHAT DO YOU NEED? *</label>
+                <label htmlFor="service" className="font-mono text-[12px] tracking-[0.25em] text-silver/55">// WHAT DO YOU NEED? *</label>
                 <select id="service" required value={form.service}
                   onChange={e => setForm(p => ({ ...p, service: e.target.value }))}
                   className={`${inputClass} appearance-none`}
@@ -87,14 +87,14 @@ export function FooterSection() {
                 </select>
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="goal" className="font-mono text-[10px] tracking-[0.25em] text-silver/55">// TELL US ABOUT YOUR GOAL *</label>
+                <label htmlFor="goal" className="font-mono text-[12px] tracking-[0.25em] text-silver/55">// TELL US ABOUT YOUR GOAL *</label>
                 <textarea id="goal" required rows={4} value={form.goal}
                   onChange={e => setForm(p => ({ ...p, goal: e.target.value }))}
                   className={`${inputClass} resize-none`}
                   placeholder="What are you building, what's the timeline, what does success look like?" />
               </div>
               <button type="submit" disabled={submitting}
-                className="pulse-glow group mt-2 flex items-center justify-center gap-3 border border-gold/50 bg-gold/[0.08] px-8 py-4 font-display text-xs tracking-[0.35em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.18] disabled:opacity-50">
+                className="pulse-glow group mt-2 flex items-center justify-center gap-3 border border-gold/50 bg-gold/[0.08] px-8 py-4 font-display text-sm tracking-[0.35em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.18] disabled:opacity-50">
                 {submitting
                   ? <Loader2 className="h-4 w-4 animate-spin" />
                   : <>INITIATE REACTION <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></>
@@ -109,8 +109,8 @@ export function FooterSection() {
               <div className="h-2 w-2 rounded-full bg-gold status-pulse" />
             </div>
             <h3 className="mb-2 font-display text-2xl tracking-[0.1em] text-silver">REACTION INITIATED</h3>
-            <p className="font-mono text-xs tracking-[0.15em] text-silver/50">INQUIRY RECEIVED</p>
-            <p className="mt-3 font-serif text-sm text-silver/60">We will review and respond within 24 hours.</p>
+            <p className="font-mono text-sm tracking-[0.15em] text-silver/50">INQUIRY RECEIVED</p>
+            <p className="mt-3 font-serif text-base text-silver/60">We will review and respond within 24 hours.</p>
           </motion.div>
         )}
 
@@ -118,12 +118,12 @@ export function FooterSection() {
         <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-8 text-center">
-          <p className="mb-3 font-serif text-sm text-silver/40">Prefer to talk directly?</p>
+          <p className="mb-3 font-serif text-base text-silver/40">Prefer to talk directly?</p>
           <a href="#contact"
-            className="font-mono text-[10px] tracking-[0.2em] text-gold/60 underline decoration-gold/30 underline-offset-4 transition-colors hover:text-gold">
+            className="font-mono text-[12px] tracking-[0.2em] text-gold/60 underline decoration-gold/30 underline-offset-4 transition-colors hover:text-gold">
             SCHEDULE A CALL →
           </a>
-          <p className="mt-3 font-mono text-[10px] tracking-[0.15em] text-silver/35">
+          <p className="mt-3 font-mono text-[12px] tracking-[0.15em] text-silver/35">
             Or reach us at{" "}
             <a href="mailto:hello@yanium.com"
               className="text-gold/60 transition-colors hover:text-gold">
@@ -134,11 +134,11 @@ export function FooterSection() {
 
         {/* Trust strip */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:gap-6">
-          <span className="font-mono text-[9px] tracking-[0.2em] text-silver/30">Yn · Response within 24hrs</span>
+          <span className="font-mono text-[11px] tracking-[0.2em] text-silver/30">Yn · Response within 24hrs</span>
           <span className="hidden text-silver/15 md:inline">·</span>
-          <span className="font-mono text-[9px] tracking-[0.2em] text-silver/30">Yerevan, Armenia</span>
+          <span className="font-mono text-[11px] tracking-[0.2em] text-silver/30">Yerevan, Armenia</span>
           <span className="hidden text-silver/15 md:inline">·</span>
-          <span className="font-mono text-[9px] tracking-[0.2em] text-silver/30">Global delivery</span>
+          <span className="font-mono text-[11px] tracking-[0.2em] text-silver/30">Global delivery</span>
         </div>
 
         {/* Footer bottom */}
@@ -159,23 +159,23 @@ export function FooterSection() {
               className="object-contain opacity-60"
             />
           </div>
-          <p className="font-serif text-xs text-silver/35">The Missing Element.</p>
+          <p className="font-serif text-sm text-silver/35">The Missing Element.</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {navLinks.map(l => (
               <a key={l} href={l === "Book a Call" ? "#contact" : `#${l.toLowerCase().replace(/ /g, "-")}`}
-                className="font-mono text-[9px] tracking-[0.2em] text-silver/30 transition-colors hover:text-silver/60">
+                className="font-mono text-[11px] tracking-[0.2em] text-silver/30 transition-colors hover:text-silver/60">
                 {l}
               </a>
             ))}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <span className="font-mono text-[9px] tracking-[0.2em] text-silver/25">© {new Date().getFullYear()} Yanium. Yerevan, Armenia.</span>
+            <span className="font-mono text-[11px] tracking-[0.2em] text-silver/25">© {new Date().getFullYear()} Yanium. Yerevan, Armenia.</span>
             <span className="hidden text-silver/15 md:inline">·</span>
-            <span className="font-mono text-[9px] tracking-[0.2em] text-silver/25">The element that completes your stack.</span>
+            <span className="font-mono text-[11px] tracking-[0.2em] text-silver/25">The element that completes your stack.</span>
             <span className="hidden text-silver/15 md:inline">·</span>
-            <a href="https://linkedin.com/company/yanium" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/company/yanium" target="_blank" rel="noopener noreferrer"
               className="text-silver/30 transition-colors hover:text-gold/70" aria-label="Yanium on LinkedIn">
-              <Linkedin className="h-3.5 w-3.5" />
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
         </div>

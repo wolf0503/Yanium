@@ -150,7 +150,7 @@ export function HeroSection() {
         </div>
         <div className="h-16 w-px bg-gradient-to-b from-gold/35 to-transparent" />
         <span
-          className="font-mono text-[8px] tracking-[0.5em] text-silver/28"
+          className="font-mono text-[10px] tracking-[0.5em] text-silver/28"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
           SCROLL
@@ -171,7 +171,7 @@ export function HeroSection() {
         </div>
         <div className="h-16 w-px bg-gradient-to-b from-gold/35 to-transparent" />
         <span
-          className="font-mono text-[8px] tracking-[0.5em] text-silver/28"
+          className="font-mono text-[10px] tracking-[0.5em] text-silver/28"
           style={{ writingMode: "vertical-rl" }}
         >
           EXPLORE
@@ -200,9 +200,9 @@ export function HeroSection() {
             </div>
             <div>
               <div className="font-mono text-sm font-bold leading-none text-gold">
-                Yn <span className="text-[10px] text-gold/55">71</span>
+                Yn <span className="text-[12px] text-gold/55">71</span>
               </div>
-              <div className="mt-0.5 font-mono text-[8px] tracking-[0.3em] text-silver/30">ELEMENT</div>
+              <div className="mt-0.5 font-mono text-[10px] tracking-[0.3em] text-silver/30">ELEMENT</div>
             </div>
           </div>
         </div>
@@ -214,7 +214,7 @@ export function HeroSection() {
           className="border border-gold/22 bg-black/50 px-4 py-2.5 backdrop-blur-sm"
           style={{ boxShadow: "0 0 24px rgba(212,175,55,0.06)" }}
         >
-          <div className="mb-1 font-mono text-[8px] tracking-[0.3em] text-silver/30">ATOMIC NUMBER</div>
+          <div className="mb-1 font-mono text-[10px] tracking-[0.3em] text-silver/30">ATOMIC NUMBER</div>
           <div className="flex items-end gap-3">
             <div className="font-display text-[2.6rem] font-bold leading-none text-gold/90">71</div>
             <svg className="mb-1 shrink-0" viewBox="0 0 36 36" fill="none" width="28" height="28">
@@ -263,7 +263,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-2 font-display text-[10px] tracking-[0.45em] text-silver/62 sm:text-[12px]"
+          className="mb-2 font-display text-[12px] tracking-[0.45em] text-silver/62 sm:text-[12px]"
         >
           THE ELEMENT MISSING FROM{" "}
           <span className="text-gold">YOUR STACK.</span>
@@ -277,7 +277,7 @@ export function HeroSection() {
           className="mb-6 flex items-center gap-2"
         >
           <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold/30" />
-          <span className="text-[9px] leading-none text-gold/70">✦</span>
+          <span className="text-[11px] leading-none text-gold/70">✦</span>
           <div className="h-px w-8 bg-gradient-to-l from-transparent to-gold/30" />
         </motion.div>
 
@@ -286,7 +286,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.78, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-10 max-w-md font-serif text-sm leading-loose text-silver/55"
+          className="mb-10 max-w-md font-serif text-base leading-loose text-silver/55"
         >
           Yanium is a full-spectrum AI and product engineering company.{" "}
           <br className="hidden sm:block" />
@@ -304,7 +304,7 @@ export function HeroSection() {
         >
           <a
             href="#contact"
-            className="group flex items-center justify-center gap-2 border border-gold/60 bg-gold/[0.12] px-8 py-3.5 font-display text-[10px] tracking-[0.3em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.22]"
+            className="group flex items-center justify-center gap-2 border border-gold/60 bg-gold/[0.12] px-8 py-3.5 font-display text-[12px] tracking-[0.3em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.22]"
             style={{ boxShadow: "0 0 32px rgba(212,175,55,0.13)" }}
           >
             BOOK A DISCOVERY CALL
@@ -312,7 +312,7 @@ export function HeroSection() {
           </a>
           <a
             href="#services"
-            className="group flex items-center justify-center gap-2 border border-white/16 bg-white/[0.028] px-8 py-3.5 font-display text-[10px] tracking-[0.3em] text-silver/58 transition-all duration-300 hover:border-white/30 hover:text-silver/90"
+            className="group flex items-center justify-center gap-2 border border-white/16 bg-white/[0.028] px-8 py-3.5 font-display text-[12px] tracking-[0.3em] text-silver/58 transition-all duration-300 hover:border-white/30 hover:text-silver/90"
           >
             EXPLORE THE ARSENAL
             <ArrowUpRight size={12} className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -342,7 +342,7 @@ export function HeroSection() {
             </svg>
           )
           return (
-            <span key={i} className="px-4 font-mono text-[8px] tracking-[0.28em] text-silver/22">
+            <span key={i} className="px-4 font-mono text-[10px] tracking-[0.28em] text-silver/22">
               {item.label}
             </span>
           )
@@ -372,10 +372,10 @@ export function HeroSection() {
             >
               <Icon />
               <div className="text-left">
-                <div className="mb-1 font-display text-[9px] tracking-[0.22em] text-gold/85">
+                <div className="mb-1 font-display text-[11px] tracking-[0.22em] text-gold/85">
                   {title}
                 </div>
-                <div className="font-mono text-[9px] leading-relaxed text-silver/40">
+                <div className="font-mono text-[11px] leading-relaxed text-silver/40">
                   {desc}
                 </div>
               </div>

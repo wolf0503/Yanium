@@ -63,7 +63,7 @@ function ProjectCard({
             <project.icon className="h-5 w-5 text-cyan" />
           </div>
           <span
-            className={`rounded-full px-3 py-1 font-mono text-[10px] tracking-[0.2em] ${
+            className={`rounded-full px-3 py-1 font-mono text-[12px] tracking-[0.2em] ${
               project.status === "ACTIVE"
                 ? "border border-code-green/30 bg-code-green/10 text-code-green"
                 : project.status === "BETA"
@@ -76,21 +76,21 @@ function ProjectCard({
         </div>
 
         {/* Code name */}
-        <div className="mb-2 font-mono text-xs tracking-[0.2em] text-cyan/50">
+        <div className="mb-2 font-mono text-sm tracking-[0.2em] text-cyan/50">
           {project.code}
         </div>
 
         <h3 className="mb-2 font-display text-2xl tracking-[0.08em] text-silver">
           {project.title}
         </h3>
-        <p className="mb-4 text-sm leading-relaxed text-silver/50">
+        <p className="mb-4 text-base leading-relaxed text-silver/50">
           {project.description}
         </p>
 
         {/* Metrics */}
         <div className="flex items-center gap-2 border-t border-white/5 pt-4">
           <div className="h-1.5 w-1.5 rounded-full bg-cyan/50" />
-          <span className="font-mono text-xs text-silver/30">
+          <span className="font-mono text-sm text-silver/30">
             {project.metrics}
           </span>
         </div>
@@ -113,7 +113,7 @@ export function LabsSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block font-mono text-xs tracking-[0.4em] text-cyan/60">
+          <span className="mb-4 inline-block font-mono text-sm tracking-[0.4em] text-cyan/60">
             {"// INTERNAL PROJECTS"}
           </span>
           <h2 className="mb-4 font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">

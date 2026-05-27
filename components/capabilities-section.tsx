@@ -61,7 +61,7 @@ function CapabilityCard({
           <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-cyan/20 bg-cyan/5">
             <item.icon className="h-5 w-5 text-cyan" />
           </div>
-          <span className="font-mono text-[10px] tracking-[0.3em] text-cyan/50">
+          <span className="font-mono text-[12px] tracking-[0.3em] text-cyan/50">
             {item.tag}
           </span>
         </div>
@@ -69,7 +69,7 @@ function CapabilityCard({
         <h3 className="mb-3 font-display text-2xl tracking-[0.08em] text-silver md:text-3xl">
           {item.title}
         </h3>
-        <p className="text-sm leading-relaxed text-silver/50">
+        <p className="text-base leading-relaxed text-silver/50">
           {item.description}
         </p>
       </div>
@@ -96,7 +96,7 @@ export function CapabilitiesSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block font-mono text-xs tracking-[0.4em] text-cyan/60">
+          <span className="mb-4 inline-block font-mono text-sm tracking-[0.4em] text-cyan/60">
             {"// CORE CAPABILITIES"}
           </span>
           <h2 className="font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">

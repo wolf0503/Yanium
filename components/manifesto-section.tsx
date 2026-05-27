@@ -92,7 +92,7 @@ function PillarCard({ p, i }: { p: { icon: LucideIcon; number: string; title: st
       </div>
 
       <h3 className="mb-3 font-display text-lg tracking-[0.12em] text-silver md:text-xl">{p.title}</h3>
-      <p className="max-w-xs font-serif text-sm leading-relaxed text-silver/70">{p.desc}</p>
+      <p className="max-w-xs font-serif text-base leading-relaxed text-silver/70">{p.desc}</p>
 
       {/* Animated underline */}
       <div className="mt-5 overflow-hidden" style={{ width: "60px", height: "1px" }}>
@@ -121,7 +121,7 @@ export function ManifestoSection() {
             initial={{ opacity: 0, letterSpacing: "0.6em" }}
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1, delay: 0.1 }}
-            className="mb-4 inline-block font-display text-[10px] text-gold/70">
+            className="mb-4 inline-block font-display text-[12px] text-gold/70">
             // PROPERTIES OF Yn
           </motion.span>
           <h2 className="font-display text-3xl tracking-[0.08em] text-silver md:text-5xl lg:text-6xl">

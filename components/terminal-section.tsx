@@ -89,7 +89,7 @@ function MetricLine({ line, visible }: { line: MetricLine; visible: boolean }) {
       <span className="text-cyan/90">{prefix}</span>
       {barFilled > 0 && <span className="text-gold/80">{bar}</span>}
       {barFilled >= line.filled && <span className="text-silver">{val}{line.unit}</span>}
-      {showTag && <span className={`text-xs font-bold ${line.tagColor === "gold" ? "text-gold" : "text-cyan"}`}>{line.tag}</span>}
+      {showTag && <span className={`text-sm font-bold ${line.tagColor === "gold" ? "text-gold" : "text-cyan"}`}>{line.tag}</span>}
     </div>
   )
 }
@@ -103,7 +103,7 @@ export function TerminalSection() {
       <div className="mx-auto max-w-4xl">
         <motion.div ref={ref} initial={{ opacity: 0, y: 60 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="flex flex-col items-center">
-          <span className="mb-4 font-display text-[10px] tracking-[0.4em] text-gold/70">// ELEMENT DATA · Yn · 71</span>
+          <span className="mb-4 font-display text-[12px] tracking-[0.4em] text-gold/70">// ELEMENT DATA · Yn · 71</span>
           <h2 className="mb-12 text-center font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">
             ELEMENT <span className="text-gold">PROPERTIES</span>
           </h2>
@@ -114,10 +114,10 @@ export function TerminalSection() {
               <div className="h-3 w-3 rounded-full bg-red-500/70" />
               <div className="h-3 w-3 rounded-full bg-yellow-500/70" />
               <div className="h-3 w-3 rounded-full bg-green-500/70" />
-              <span className="ml-3 font-mono text-xs text-silver/40">yanium://element-71 · Yn · 288.07</span>
+              <span className="ml-3 font-mono text-sm text-silver/40">yanium://element-71 · Yn · 288.07</span>
             </div>
             <div className="flex min-h-[320px] flex-col gap-3 p-6">
-              <div className="mb-2 font-mono text-xs text-silver/35">// ELEMENT 71 · LUTETIUM DATA — LIVE</div>
+              <div className="mb-2 font-mono text-sm text-silver/35">// ELEMENT 71 · LUTETIUM DATA — LIVE</div>
               {LINES.map((line, i) =>
                 line.type === "simple"
                   ? <SimpleLine key={i} line={line} visible={isInView} />

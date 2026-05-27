@@ -52,10 +52,10 @@ function PillarItem({
       <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg border border-cyan/20 bg-cyan/5 transition-all duration-500 group-hover:border-cyan/40 group-hover:bg-cyan/10 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.1)]">
         <pillar.icon className="h-6 w-6 text-cyan" />
       </div>
-      <h4 className="mb-2 font-mono text-xs tracking-[0.3em] text-cyan">
+      <h4 className="mb-2 font-mono text-sm tracking-[0.3em] text-cyan">
         {pillar.label}
       </h4>
-      <p className="max-w-[200px] text-sm leading-relaxed text-silver/50">
+      <p className="max-w-[200px] text-base leading-relaxed text-silver/50">
         {pillar.description}
       </p>
     </motion.div>
@@ -79,7 +79,7 @@ export function VibeStorySection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block font-mono text-xs tracking-[0.4em] text-cyan/60">
+          <span className="mb-4 inline-block font-mono text-sm tracking-[0.4em] text-cyan/60">
             {"// THE VIBE CODING STORY"}
           </span>
           <h2 className="mb-6 font-display text-3xl tracking-[0.08em] text-silver md:text-5xl lg:text-6xl">
@@ -111,7 +111,7 @@ export function VibeStorySection() {
 
           <div className="mt-6 flex items-center gap-4">
             <div className="h-2 w-2 rounded-full bg-code-green" />
-            <span className="font-mono text-xs tracking-[0.2em] text-silver/40">
+            <span className="font-mono text-sm tracking-[0.2em] text-silver/40">
               HUMAN-AI HYBRID DEVELOPMENT PROTOCOL
             </span>
           </div>

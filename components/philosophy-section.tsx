@@ -32,7 +32,7 @@ export function PhilosophySection() {
             initial={{ opacity: 0, letterSpacing: "0.7em" }}
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1, delay: 0.1 }}
-            className="mb-4 inline-block font-display text-[10px] text-gold/70">
+            className="mb-4 inline-block font-display text-[12px] text-gold/70">
             // ELEMENT DATA · Yn · 71
           </motion.span>
           <h2 className="font-display text-3xl tracking-[0.08em] md:text-5xl lg:text-6xl">
@@ -88,7 +88,7 @@ export function PhilosophySection() {
           <div className="mt-8 h-px w-full bg-gradient-to-r from-gold/30 via-gold/10 to-transparent" />
           <div className="mt-6 flex items-center gap-4">
             <div className="h-2 w-2 rounded-full bg-code-green status-pulse" />
-            <span className="font-sans text-xs tracking-[0.2em] text-silver/50">ONE ELEMENT. EVERY COMPOUND YOU NEED.</span>
+            <span className="font-sans text-sm tracking-[0.2em] text-silver/50">ONE ELEMENT. EVERY COMPOUND YOU NEED.</span>
           </div>
         </motion.div>
 
@@ -105,8 +105,8 @@ export function PhilosophySection() {
                 <div className="mb-3 flex h-14 w-full items-center justify-center border border-gold/20 bg-gold/5 transition-all duration-500 group-hover:border-gold/50 group-hover:bg-gold/10">
                   <span className="font-display text-2xl font-bold text-gold">{p.number}</span>
                 </div>
-                <h4 className="mb-1 font-display text-[9px] tracking-[0.2em] text-silver/70">{p.label}</h4>
-                <p className="font-mono text-[8px] tracking-[0.15em] text-silver/40">{p.sub}</p>
+                <h4 className="mb-1 font-display text-[11px] tracking-[0.2em] text-silver/70">{p.label}</h4>
+                <p className="font-mono text-[10px] tracking-[0.15em] text-silver/40">{p.sub}</p>
               </motion.div>
             </MagneticCard>
           ))}

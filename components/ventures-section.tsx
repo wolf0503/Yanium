@@ -63,7 +63,7 @@ function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: numbe
         {v.statusColor === "green" && (
           <span className="h-1.5 w-1.5 rounded-full bg-code-green status-pulse" />
         )}
-        <span className={`rounded-sm border px-2 py-0.5 font-mono text-[9px] tracking-[0.2em] ${statusCls}`}>
+        <span className={`rounded-sm border px-2 py-0.5 font-mono text-[11px] tracking-[0.2em] ${statusCls}`}>
           {v.status}
         </span>
       </div>
@@ -77,20 +77,20 @@ function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: numbe
         </div>
 
         {/* Code label */}
-        <p className="mb-1 font-mono text-[9px] tracking-[0.28em] text-gold/55">{v.code}</p>
+        <p className="mb-1 font-mono text-[11px] tracking-[0.28em] text-gold/55">{v.code}</p>
 
         {/* Title */}
         <h3 className="mb-2 font-display text-xl tracking-[0.08em] text-silver">{v.title}</h3>
 
         {/* Description */}
-        <p className="mb-6 font-serif text-sm leading-relaxed text-silver/70">{v.desc}</p>
+        <p className="mb-6 font-serif text-base leading-relaxed text-silver/70">{v.desc}</p>
 
         {/* Stat / status block */}
         <div className="border-t border-white/8 pt-5">
-          <p className="mb-1 font-mono text-[9px] tracking-[0.2em] text-silver/40">{v.stat.label}</p>
+          <p className="mb-1 font-mono text-[11px] tracking-[0.2em] text-silver/40">{v.stat.label}</p>
           <div className="flex items-baseline gap-2">
             <span className={`font-display tracking-wide text-gold ${v.stat.sub ? "text-3xl" : "text-base"}`}>{v.stat.value}</span>
-            {v.stat.sub && <span className="font-mono text-[10px] text-silver/35">{v.stat.sub}</span>}
+            {v.stat.sub && <span className="font-mono text-[12px] text-silver/35">{v.stat.sub}</span>}
           </div>
         </div>
       </div>
@@ -112,7 +112,7 @@ export function VenturesSection() {
             initial={{ opacity: 0, letterSpacing: "0.6em" }}
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1 }}
-            className="mb-4 inline-block font-display text-[10px] text-gold/70">
+            className="mb-4 inline-block font-display text-[12px] text-gold/70">
             // INTERNAL COMPOUNDS · BUILT BY Yn
           </motion.span>
           <h2 className="mb-4 font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">

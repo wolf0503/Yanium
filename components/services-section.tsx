@@ -76,6 +76,7 @@ function PillarCard({ s, i, isInView }: { s: typeof pillars[0]; i: number; isInV
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setTilt({ x: 0, y: 0 }); setHovered(false) }}
+      className="h-full"
       style={{ perspective: "800px" }}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -86,7 +87,7 @@ function PillarCard({ s, i, isInView }: { s: typeof pillars[0]; i: number; isInV
           transition: hovered ? "transform 0.1s ease-out" : "transform 0.5s cubic-bezier(0.22,1,0.36,1)",
           transformStyle: "preserve-3d",
         }}
-        className="relative overflow-hidden rounded-lg border border-white/[0.08] bg-white/[0.03] p-7">
+        className="relative flex h-full flex-col overflow-hidden rounded-lg border border-white/[0.08] bg-white/[0.03] p-7">
         {/* Hover glow */}
         <div className="pointer-events-none absolute inset-0 rounded-lg transition-opacity duration-500"
           style={{ opacity: hovered ? 1 : 0, background: "linear-gradient(135deg, rgba(212,175,55,0.1) 0%, transparent 50%, rgba(212,175,55,0.05) 100%)" }} />
@@ -101,20 +102,20 @@ function PillarCard({ s, i, isInView }: { s: typeof pillars[0]; i: number; isInV
           <span className="font-display text-4xl font-bold text-gold/15 select-none">{s.pillarNum}</span>
         </div>
 
-        <p className="mb-1 font-mono text-[9px] tracking-[0.3em] text-gold/55">{s.tag}</p>
+        <p className="mb-1 font-mono text-[11px] tracking-[0.3em] text-gold/55">{s.tag}</p>
         <h3 className="mb-3 font-display text-lg tracking-[0.08em] text-silver md:text-xl">{s.label}</h3>
-        <p className="mb-5 font-serif text-sm leading-relaxed text-silver/70">{s.desc}</p>
+        <p className="mb-5 font-serif text-base leading-relaxed text-silver/70">{s.desc}</p>
 
         <ul className="mb-5 flex flex-wrap gap-2">
           {s.detail.map(d => (
-            <li key={d} className="rounded-sm border border-gold/15 px-2 py-1 font-mono text-[9px] tracking-[0.1em] text-gold/55">
+            <li key={d} className="rounded-sm border border-gold/15 px-2 py-1 font-mono text-[11px] tracking-[0.1em] text-gold/55">
               {d}
             </li>
           ))}
         </ul>
 
-        <div className="border-t border-white/[0.08] pt-4">
-          <span className="font-mono text-[9px] tracking-[0.15em] text-silver/35">{s.callout}</span>
+        <div className="mt-auto border-t border-white/[0.08] pt-4">
+          <span className="font-mono text-[11px] tracking-[0.15em] text-silver/35">{s.callout}</span>
         </div>
 
         {/* Corner accents */}
@@ -137,7 +138,7 @@ export function ServicesSection() {
       <div className="mx-auto max-w-6xl">
         <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }} className="mb-16 text-center">
-          <span className="mb-4 inline-block font-display text-[10px] tracking-[0.4em] text-gold/70">// OXIDATION STATE +3 · THREE FORCES · ONE SYSTEM</span>
+          <span className="mb-4 inline-block font-display text-[12px] tracking-[0.4em] text-gold/70">// OXIDATION STATE +3 · THREE FORCES · ONE SYSTEM</span>
           <h2 className="font-display text-3xl tracking-[0.08em] text-silver md:text-5xl lg:text-6xl">
             THREE PILLARS.{" "}
             <motion.span className="inline-block text-gold"
@@ -154,7 +155,7 @@ export function ServicesSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:items-stretch">
           {pillars.map((s, i) => (
             <PillarCard key={s.pillarNum} s={s} i={i} isInView={isInView} />
           ))}

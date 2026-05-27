@@ -49,7 +49,7 @@ export function TeamSection() {
             initial={{ opacity: 0, letterSpacing: "0.7em" }}
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1, delay: 0.1 }}
-            className="mb-4 inline-block font-display text-[10px] text-gold/70">
+            className="mb-4 inline-block font-display text-[12px] text-gold/70">
             // Yn · 104 NEUTRONS · THE FORCE YOU DON&apos;T SEE
           </motion.span>
           <h2 className="font-display text-3xl tracking-[0.08em] text-silver md:text-5xl lg:text-6xl">
@@ -74,7 +74,7 @@ export function TeamSection() {
           <div className="grid grid-cols-1 divide-y divide-white/[0.05] md:grid-cols-2 md:divide-x md:divide-y-0">
             {disciplines.map((d, di) => (
               <div key={di} className="p-7">
-                <p className="mb-5 font-mono text-[9px] tracking-[0.3em] text-gold/60">{d.category}</p>
+                <p className="mb-5 font-mono text-[11px] tracking-[0.3em] text-gold/60">{d.category}</p>
                 <div className="flex flex-col gap-4">
                   {d.roles.map((r, ri) => (
                     <motion.div key={ri}
@@ -82,8 +82,8 @@ export function TeamSection() {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.3 + di * 0.1 + ri * 0.06 }}
                       className="flex flex-col gap-0.5">
-                      <span className="font-display text-sm tracking-[0.08em] text-silver">{r.title}</span>
-                      <span className="font-mono text-[9px] tracking-[0.12em] text-silver/40">{r.stack}</span>
+                      <span className="font-display text-base tracking-[0.08em] text-silver">{r.title}</span>
+                      <span className="font-mono text-[11px] tracking-[0.12em] text-silver/40">{r.stack}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -96,11 +96,11 @@ export function TeamSection() {
           initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col items-center gap-3 text-center">
-          <p className="max-w-xl font-serif text-sm leading-relaxed text-silver/55">
+          <p className="max-w-xl font-serif text-base leading-relaxed text-silver/55">
             We don&apos;t list headcounts. We list capabilities. Every specialist on a Yanium project
             is exactly where they need to be — not assigned by availability, but matched by expertise.
           </p>
-          <span className="font-mono text-[9px] tracking-[0.2em] text-silver/30">
+          <span className="font-mono text-[11px] tracking-[0.2em] text-silver/30">
             Yn-175 — the stable isotope. 97.4% pure. That&apos;s our hiring standard.
           </span>
         </motion.div>
