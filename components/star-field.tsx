@@ -1,2 +1,4 @@
 // Stars are rendered inside BlackholeCanvas. Kept for import compatibility.
-export function StarField() { return null }
+export function StarField() {
+  return null;
+}

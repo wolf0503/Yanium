@@ -31,13 +31,7 @@ const projects = [
   },
 ];
 
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: (typeof projects)[0];
-  index: number;
-}) {
+function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -76,23 +70,17 @@ function ProjectCard({
         </div>
 
         {/* Code name */}
-        <div className="mb-2 font-mono text-sm tracking-[0.2em] text-cyan/50">
-          {project.code}
-        </div>
+        <div className="mb-2 font-mono text-sm tracking-[0.2em] text-cyan/50">{project.code}</div>
 
         <h3 className="mb-2 font-display text-2xl tracking-[0.08em] text-silver">
           {project.title}
         </h3>
-        <p className="mb-4 text-base leading-relaxed text-silver/50">
-          {project.description}
-        </p>
+        <p className="mb-4 text-base leading-relaxed text-silver/50">{project.description}</p>
 
         {/* Metrics */}
         <div className="flex items-center gap-2 border-t border-white/5 pt-4">
           <div className="h-1.5 w-1.5 rounded-full bg-cyan/50" />
-          <span className="font-mono text-sm text-silver/30">
-            {project.metrics}
-          </span>
+          <span className="font-mono text-sm text-silver/30">{project.metrics}</span>
         </div>
       </div>
     </motion.div>
@@ -120,8 +108,7 @@ export function LabsSection() {
             THE <span className="text-cyan">INCUBATOR</span>
           </h2>
           <p className="mx-auto max-w-xl text-base leading-relaxed text-silver/50">
-            We don{"'"}t just build for others. We build the future of our own
-            portfolio.
+            We don{"'"}t just build for others. We build the future of our own portfolio.
           </p>
         </motion.div>
 

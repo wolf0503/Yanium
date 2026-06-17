@@ -1,10 +1,10 @@
-"use client"
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export function SectionDivider() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-20px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-20px" });
 
   return (
     <div ref={ref} className="mx-auto max-w-5xl px-6 py-1">
@@ -26,5 +26,5 @@ export function SectionDivider() {
         />
       </div>
     </div>
-  )
+  );
 }

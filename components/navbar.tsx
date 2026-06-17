@@ -1,17 +1,17 @@
-"use client"
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import Image from "next/image"
+"use client";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "WHAT WE ARE", href: "#philosophy" },
-  { label: "SERVICES",    href: "#services" },
+  { label: "SERVICES", href: "#services" },
   { label: "HOW WE WORK", href: "#how-we-work" },
-  { label: "VENTURES",    href: "#ventures" },
-  { label: "TEAM",        href: "#team" },
-  { label: "CONTACT",     href: "#contact" },
-]
+  { label: "VENTURES", href: "#ventures" },
+  { label: "TEAM", href: "#team" },
+  { label: "CONTACT", href: "#contact" },
+];
 
 function YnLogo() {
   return (
@@ -33,19 +33,19 @@ function YnLogo() {
         priority
       />
     </a>
-  )
+  );
 }
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40)
-    fn()
-    window.addEventListener("scroll", fn, { passive: true })
-    return () => window.removeEventListener("scroll", fn)
-  }, [])
+    const fn = () => setScrolled(window.scrollY > 40);
+    fn();
+    window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
 
   return (
     <>
@@ -59,29 +59,37 @@ export function Navbar() {
             : "py-3.5 md:py-5"
         }`}
         style={{
-          background: scrolled
-            ? "rgba(5,5,5,0.92)"
-            : "rgba(5,5,5,0.55)",
+          background: scrolled ? "rgba(5,5,5,0.92)" : "rgba(5,5,5,0.55)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-        }}>
+        }}
+      >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
           <YnLogo />
           <div className="hidden items-center gap-8 md:flex">
-            {navLinks.map(link => (
-              <a key={link.label} href={link.href}
-                className="group relative font-display text-[10px] tracking-[0.25em] text-silver/80 transition-colors duration-300 hover:text-gold">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="group relative font-display text-[10px] tracking-[0.25em] text-silver/80 transition-colors duration-300 hover:text-gold"
+              >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <a href="#contact"
-              className="ml-2 border border-gold/50 bg-gold/[0.07] px-5 py-2 font-display text-[10px] tracking-[0.25em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.18]">
+            <a
+              href="#contact"
+              className="ml-2 border border-gold/50 bg-gold/[0.07] px-5 py-2 font-display text-[10px] tracking-[0.25em] text-gold transition-all duration-300 hover:border-gold hover:bg-gold/[0.18]"
+            >
               BOOK A CALL
             </a>
           </div>
-          <button type="button" onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-silver/80 transition-colors hover:text-gold md:hidden" aria-label="Toggle menu">
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-silver/80 transition-colors hover:text-gold md:hidden"
+            aria-label="Toggle menu"
+          >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -95,26 +103,38 @@ export function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 overflow-hidden md:hidden"
-            style={{ background: "rgba(5,5,5,0.97)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)" }}>
+            style={{
+              background: "rgba(5,5,5,0.97)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+            }}
+          >
             {navLinks.map((link, i) => (
-              <motion.a key={link.label} href={link.href}
-                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+              <motion.a
+                key={link.label}
+                href={link.href}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setMobileOpen(false)}
-                className="font-display text-sm tracking-[0.3em] text-silver/85 transition-colors hover:text-gold">
+                className="font-display text-sm tracking-[0.3em] text-silver/85 transition-colors hover:text-gold"
+              >
                 {link.label}
               </motion.a>
             ))}
-            <motion.a href="#contact"
-              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+            <motion.a
+              href="#contact"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navLinks.length * 0.07, ease: [0.22, 1, 0.36, 1] }}
               onClick={() => setMobileOpen(false)}
-              className="border border-gold/50 bg-gold/[0.07] px-8 py-3 font-display text-sm tracking-[0.3em] text-gold transition-colors hover:bg-gold/[0.18]">
+              className="border border-gold/50 bg-gold/[0.07] px-8 py-3 font-display text-sm tracking-[0.3em] text-gold transition-colors hover:bg-gold/[0.18]"
+            >
               BOOK A CALL
             </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

@@ -27,13 +27,7 @@ const pillars = [
   },
 ];
 
-function PillarItem({
-  pillar,
-  index,
-}: {
-  pillar: (typeof pillars)[0];
-  index: number;
-}) {
+function PillarItem({ pillar, index }: { pillar: (typeof pillars)[0]; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -52,12 +46,8 @@ function PillarItem({
       <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg border border-cyan/20 bg-cyan/5 transition-all duration-500 group-hover:border-cyan/40 group-hover:bg-cyan/10 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.1)]">
         <pillar.icon className="h-6 w-6 text-cyan" />
       </div>
-      <h4 className="mb-2 font-mono text-sm tracking-[0.3em] text-cyan">
-        {pillar.label}
-      </h4>
-      <p className="max-w-[200px] text-base leading-relaxed text-silver/50">
-        {pillar.description}
-      </p>
+      <h4 className="mb-2 font-mono text-sm tracking-[0.3em] text-cyan">{pillar.label}</h4>
+      <p className="max-w-[200px] text-base leading-relaxed text-silver/50">{pillar.description}</p>
     </motion.div>
   );
 }
@@ -98,11 +88,11 @@ export function VibeStorySection() {
           className="glass mx-auto mb-20 max-w-3xl rounded-lg p-8 md:p-12"
         >
           <p className="text-base leading-relaxed text-silver/70 md:text-lg md:leading-8">
-            The old way of development is a bottleneck. We{"'"}ve replaced manual
-            labor with <span className="font-semibold text-cyan">Vibe Coding</span>
-            {" "}&mdash; a Human-AI hybrid workflow that allows us to focus on{" "}
-            <span className="text-silver">your business logic</span> while our AI
-            engines handle the infrastructure. We don{"'"}t just write code; we{" "}
+            The old way of development is a bottleneck. We{"'"}ve replaced manual labor with{" "}
+            <span className="font-semibold text-cyan">Vibe Coding</span> &mdash; a Human-AI hybrid
+            workflow that allows us to focus on{" "}
+            <span className="text-silver">your business logic</span> while our AI engines handle the
+            infrastructure. We don{"'"}t just write code; we{" "}
             <span className="text-silver">orchestrate intelligence</span>.
           </p>
 

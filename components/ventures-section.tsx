@@ -1,7 +1,7 @@
-"use client"
-import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Shield, TrendingUp, Activity } from "lucide-react"
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Shield, TrendingUp, Activity } from "lucide-react";
 
 const ventures = [
   {
@@ -31,16 +31,24 @@ const ventures = [
     statusColor: "silver" as const,
     stat: { label: "Status", value: "v2.0", sub: "in development" },
   },
-]
+];
 
-function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: number; isParentInView: boolean }) {
-  const [hovered, setHovered] = useState(false)
+function VentureCard({
+  v,
+  i,
+  isParentInView,
+}: {
+  v: (typeof ventures)[0];
+  i: number;
+  isParentInView: boolean;
+}) {
+  const [hovered, setHovered] = useState(false);
 
   const statusCls = {
-    green:  "border-code-green/40 bg-code-green/10 text-code-green",
-    gold:   "border-gold/40 bg-gold/10 text-gold",
+    green: "border-code-green/40 bg-code-green/10 text-code-green",
+    gold: "border-gold/40 bg-gold/10 text-gold",
     silver: "border-silver/25 bg-silver/5 text-silver/55",
-  }[v.statusColor]
+  }[v.statusColor];
 
   return (
     <motion.div
@@ -52,9 +60,12 @@ function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: numbe
       className="group glass relative overflow-hidden rounded-lg p-6 transition-all duration-500"
       style={{
         willChange: "transform",
-        boxShadow: hovered ? "0 0 40px rgba(212,175,55,0.08), inset 0 0 0 1px rgba(212,175,55,0.2)" : "inset 0 0 0 1px rgba(255,255,255,0.06)",
+        boxShadow: hovered
+          ? "0 0 40px rgba(212,175,55,0.08), inset 0 0 0 1px rgba(212,175,55,0.2)"
+          : "inset 0 0 0 1px rgba(255,255,255,0.06)",
         transition: "box-shadow 0.4s ease",
-      }}>
+      }}
+    >
       {/* Hover gradient */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/[0.06] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
@@ -63,16 +74,22 @@ function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: numbe
         {v.statusColor === "green" && (
           <span className="h-1.5 w-1.5 rounded-full bg-code-green status-pulse" />
         )}
-        <span className={`rounded-sm border px-2 py-0.5 font-mono text-[11px] tracking-[0.2em] ${statusCls}`}>
+        <span
+          className={`rounded-sm border px-2 py-0.5 font-mono text-[11px] tracking-[0.2em] ${statusCls}`}
+        >
           {v.status}
         </span>
       </div>
 
       <div className="relative z-10">
         {/* Icon */}
-        <div className={`mb-5 flex h-12 w-12 items-center justify-center border transition-all duration-500 ${
-          hovered ? "border-gold/55 bg-gold/10 shadow-[0_0_20px_rgba(212,175,55,0.18)]" : "border-gold/20 bg-gold/5"
-        }`}>
+        <div
+          className={`mb-5 flex h-12 w-12 items-center justify-center border transition-all duration-500 ${
+            hovered
+              ? "border-gold/55 bg-gold/10 shadow-[0_0_20px_rgba(212,175,55,0.18)]"
+              : "border-gold/20 bg-gold/5"
+          }`}
+        >
           <v.icon className="h-5 w-5 text-gold" />
         </div>
 
@@ -87,43 +104,59 @@ function VentureCard({ v, i, isParentInView }: { v: typeof ventures[0]; i: numbe
 
         {/* Stat / status block */}
         <div className="border-t border-white/8 pt-5">
-          <p className="mb-1 font-mono text-[11px] tracking-[0.2em] text-silver/40">{v.stat.label}</p>
+          <p className="mb-1 font-mono text-[11px] tracking-[0.2em] text-silver/40">
+            {v.stat.label}
+          </p>
           <div className="flex items-baseline gap-2">
-            <span className={`font-display tracking-wide text-gold ${v.stat.sub ? "text-3xl" : "text-base"}`}>{v.stat.value}</span>
-            {v.stat.sub && <span className="font-mono text-[12px] text-silver/35">{v.stat.sub}</span>}
+            <span
+              className={`font-display tracking-wide text-gold ${v.stat.sub ? "text-3xl" : "text-base"}`}
+            >
+              {v.stat.value}
+            </span>
+            {v.stat.sub && (
+              <span className="font-mono text-[12px] text-silver/35">{v.stat.sub}</span>
+            )}
           </div>
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
 export function VenturesSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="ventures" className="relative py-12 px-6 md:py-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[350px] w-[700px] -translate-x-1/2 rounded-full bg-gold/[0.018] blur-[130px]" />
       <div className="mx-auto max-w-6xl">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }} className="mb-16 text-center">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mb-16 text-center"
+        >
           <motion.span
             initial={{ opacity: 0, letterSpacing: "0.6em" }}
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1 }}
-            className="mb-4 inline-block font-display text-[12px] text-gold/70">
+            className="mb-4 inline-block font-display text-[12px] text-gold/70"
+          >
             // INTERNAL COMPOUNDS · BUILT BY Yn
           </motion.span>
           <h2 className="mb-4 font-display text-4xl tracking-[0.1em] text-silver md:text-5xl lg:text-6xl">
             THE <span className="text-gold">VENTURES</span>
           </h2>
           <motion.p
-            initial={{ opacity: 0, y: 10 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mx-auto max-w-xl font-serif text-base leading-relaxed text-silver/65">
-            Our ventures are proof of vision. Built in-house using the same workflow, standards,
-            and speed we bring to every client engagement.
+            className="mx-auto max-w-xl font-serif text-base leading-relaxed text-silver/65"
+          >
+            Our ventures are proof of vision. Built in-house using the same workflow, standards, and
+            speed we bring to every client engagement.
           </motion.p>
         </motion.div>
 
@@ -134,5 +167,5 @@ export function VenturesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-"use client"
-import { motion, useInView } from "framer-motion"
-import { useRef, useState, useEffect } from "react"
-import { Layers, Zap, Cpu, Users } from "lucide-react"
-import type { LucideIcon } from "lucide-react"
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { Layers, Zap, Cpu, Users } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 const pillars = [
   {
@@ -29,22 +29,22 @@ const pillars = [
     title: "PARTNERS, NOT VENDORS",
     desc: "Element 71 was discovered by three minds working independently toward the same truth. We operate like that with our clients — aligned to the same outcome, moving at the same velocity.",
   },
-]
+];
 
-const TYPEWRITER_TEXT = "OUTCOMES"
+const TYPEWRITER_TEXT = "OUTCOMES";
 
 function TypewriterWord({ trigger }: { trigger: boolean }) {
-  const [shown, setShown] = useState("")
+  const [shown, setShown] = useState("");
   useEffect(() => {
-    if (!trigger) return
-    let i = 0
+    if (!trigger) return;
+    let i = 0;
     const iv = setInterval(() => {
-      i++
-      setShown(TYPEWRITER_TEXT.slice(0, i))
-      if (i >= TYPEWRITER_TEXT.length) clearInterval(iv)
-    }, 80)
-    return () => clearInterval(iv)
-  }, [trigger])
+      i++;
+      setShown(TYPEWRITER_TEXT.slice(0, i));
+      if (i >= TYPEWRITER_TEXT.length) clearInterval(iv);
+    }, 80);
+    return () => clearInterval(iv);
+  }, [trigger]);
   return (
     <span className="text-gold">
       {shown}
@@ -52,46 +52,60 @@ function TypewriterWord({ trigger }: { trigger: boolean }) {
         <span className="terminal-cursor inline-block h-[0.85em] w-[0.08em] translate-y-[0.1em] bg-gold" />
       )}
     </span>
-  )
+  );
 }
 
-function PillarCard({ p, i }: { p: { icon: LucideIcon; number: string; title: string; desc: string }; i: number }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-  const [hovered, setHovered] = useState(false)
+function PillarCard({
+  p,
+  i,
+}: {
+  p: { icon: LucideIcon; number: string; title: string; desc: string };
+  i: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.div ref={ref}
+    <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="group relative flex flex-col items-center text-center"
-      style={{ willChange: "transform" }}>
-
+      style={{ willChange: "transform" }}
+    >
       {/* Number — always visible, glows on hover */}
       <motion.span
         className="mb-2 font-display font-bold leading-none select-none"
         style={{
           fontSize: "clamp(5rem,12vw,8rem)",
           color: hovered ? "rgba(212,175,55,0.35)" : "rgba(212,175,55,0.18)",
-          textShadow: hovered ? "0 0 60px rgba(212,175,55,0.5), 0 0 20px rgba(212,175,55,0.3)" : "none",
+          textShadow: hovered
+            ? "0 0 60px rgba(212,175,55,0.5), 0 0 20px rgba(212,175,55,0.3)"
+            : "none",
           transition: "color 0.4s ease, text-shadow 0.4s ease",
-        }}>
+        }}
+      >
         {p.number}
       </motion.span>
 
       {/* Icon */}
-      <div className={`mb-5 flex h-14 w-14 items-center justify-center border transition-all duration-500 ${
-        hovered
-          ? "border-gold/65 bg-gold/12 shadow-[0_0_24px_rgba(212,175,55,0.25)]"
-          : "border-gold/25 bg-gold/5"
-      }`}>
+      <div
+        className={`mb-5 flex h-14 w-14 items-center justify-center border transition-all duration-500 ${
+          hovered
+            ? "border-gold/65 bg-gold/12 shadow-[0_0_24px_rgba(212,175,55,0.25)]"
+            : "border-gold/25 bg-gold/5"
+        }`}
+      >
         <p.icon className="h-6 w-6 text-gold" />
       </div>
 
-      <h3 className="mb-3 font-display text-lg tracking-[0.12em] text-silver md:text-xl">{p.title}</h3>
+      <h3 className="mb-3 font-display text-lg tracking-[0.12em] text-silver md:text-xl">
+        {p.title}
+      </h3>
       <p className="max-w-xs font-serif text-base leading-relaxed text-silver/70">{p.desc}</p>
 
       {/* Animated underline */}
@@ -104,30 +118,36 @@ function PillarCard({ p, i }: { p: { icon: LucideIcon; number: string; title: st
         />
       </div>
     </motion.div>
-  )
+  );
 }
 
 export function ManifestoSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="manifesto" className="relative py-12 px-6 md:py-32">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.025] blur-[160px]" />
       <div className="mx-auto max-w-6xl">
-        <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }} className="mb-20 text-center">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mb-20 text-center"
+        >
           <motion.span
             initial={{ opacity: 0, letterSpacing: "0.6em" }}
             animate={isInView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
             transition={{ duration: 1, delay: 0.1 }}
-            className="mb-4 inline-block font-display text-[12px] text-gold/70">
+            className="mb-4 inline-block font-display text-[12px] text-gold/70"
+          >
             // PROPERTIES OF Yn
           </motion.span>
           <h2 className="font-display text-3xl tracking-[0.08em] text-silver md:text-5xl lg:text-6xl">
             WE DO NOT BILL HOURS.
             <br />
-            WE DELIVER{" "}<TypewriterWord trigger={isInView} />.
+            WE DELIVER <TypewriterWord trigger={isInView} />.
           </h2>
         </motion.div>
 
@@ -138,5 +158,5 @@ export function ManifestoSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
